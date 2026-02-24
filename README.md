@@ -62,16 +62,6 @@
 
 ---
 
-## 💻 Most Used Languages
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Adonis-Lee&layout=compact&theme=tokyonight&hide_border=true&title_color=1E90FF"/>
-
-</div>
-
----
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/Adonis-Lee/Adonis-Lee/output/github-contribution-grid-snake-dark.svg" />
 </p>
