@@ -1,7 +1,7 @@
 ![](https://komarev.com/ghpvc/?username=Adonis-Lee&color=0A66C2)
 
 <div align="center">
- <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=26&pause=1000&color=1E90FF&center=true&vCenter=true&width=750&lines=Mehmet+Anıl+ÜLKÜ;Game+Developer+🎮;EEE+%26+CENG+Student;Engineering+Student;Code+•+Design+•+Create+🚀" />
+ <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=26&pause=1000&color=1E90FF&center=true&vCenter=true&width=750&lines=Mehmet+Anıl+ÜLKÜ;Game+Developer+🎮;EEE+%26+CENG+Student;Code+•+Design+•+Create+🚀" />
 </div>
 
 ---
