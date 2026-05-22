@@ -31,51 +31,21 @@
 ## 🛠️ Tech Stack
 
 ### 🎮 Game Development
-<p align="left">
-  <a href="https://unity.com/" target="_blank">
-    <img src="https://img.shields.io/badge/Unity-101010?style=for-the-badge&logo=unity&logoColor=00E5FF" alt="Unity" />
-  </a>
-  <a href="https://www.unrealengine.com/" target="_blank">
-    <img src="https://img.shields.io/badge/Unreal%20Engine-101010?style=for-the-badge&logo=unrealengine&logoColor=8A2BE2" alt="Unreal Engine" />
-  </a>
-  <a href="https://www.blender.org/" target="_blank">
-    <img src="https://img.shields.io/badge/Blender-101010?style=for-the-badge&logo=blender&logoColor=00E5FF" alt="Blender" />
-  </a>
-</p>
+[![Unity](https://img.shields.io/badge/Unity-101010?style=for-the-badge&logo=unity&logoColor=00E5FF)](https://unity.com/) [![Unreal Engine](https://img.shields.io/badge/Unreal%20Engine-101010?style=for-the-badge&logo=unrealengine&logoColor=8A2BE2)](https://www.unrealengine.com/) [![Blender](https://img.shields.io/badge/Blender-101010?style=for-the-badge&logo=blender&logoColor=00E5FF)](https://www.blender.org/)
 
 ### ⚙️ Engineering & Simulation
-<p align="left">
-  <a href="https://www.solidworks.com/" target="_blank">
-    <img src="https://img.shields.io/badge/SolidWorks-101010?style=for-the-badge&logo=dassaultsystemes&logoColor=8A2BE2" alt="SolidWorks" />
-  </a>
-  <a href="https://www.mathworks.com/products/matlab.html" target="_blank">
-    <img src="https://img.shields.io/badge/MATLAB-101010?style=for-the-badge&logo=mathworks&logoColor=00E5FF" alt="MATLAB" />
-  </a>
-</p>
+[![SolidWorks](https://img.shields.io/badge/SolidWorks-101010?style=for-the-badge&logo=dassaultsystemes&logoColor=8A2BE2)](https://www.solidworks.com/) [![MATLAB](https://img.shields.io/badge/MATLAB-101010?style=for-the-badge&logo=mathworks&logoColor=00E5FF)](https://www.mathworks.com/products/matlab.html)
 
 ### 💻 Programming
-<p align="left">
-  <a href="https://docs.microsoft.com/en-us/dotnet/csharp/" target="_blank">
-    <img src="https://img.shields.io/badge/C%23-101010?style=for-the-badge&logo=csharp&logoColor=00E5FF" alt="C#" />
-  </a>
-  <a href="https://isocpp.org/" target="_blank">
-    <img src="https://img.shields.io/badge/C%2B%2B-101010?style=for-the-badge&logo=cplusplus&logoColor=8A2BE2" alt="C++" />
-  </a>
-  <a href="https://www.python.org/" target="_blank">
-    <img src="https://img.shields.io/badge/Python-101010?style=for-the-badge&logo=python&logoColor=00E5FF" alt="Python" />
-  </a>
-  <a href="https://en.cppreference.com/w/c" target="_blank">
-    <img src="https://img.shields.io/badge/C-101010?style=for-the-badge&logo=c&logoColor=8A2BE2" alt="C" />
-  </a>
-</p>
+[![C#](https://img.shields.io/badge/C%23-101010?style=for-the-badge&logo=csharp&logoColor=00E5FF)](https://docs.microsoft.com/en-us/dotnet/csharp/) [![C++](https://img.shields.io/badge/C%2B%2B-101010?style=for-the-badge&logo=cplusplus&logoColor=8A2BE2)](https://isocpp.org/) [![Python](https://img.shields.io/badge/Python-101010?style=for-the-badge&logo=python&logoColor=00E5FF)](https://www.python.org/) [![C](https://img.shields.io/badge/C-101010?style=for-the-badge&logo=c&logoColor=8A2BE2)](https://en.cppreference.com/w/c)
 
 ---
 
 ## 📊 Developer Stats
 
 <div align="center">
-  <!-- Özel JJK temalı istatistik kartı -->
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=Adonis-Lee&show_icons=true&bg_color=0D0E15&title_color=00e5ff&text_color=E2E8F0&icon_color=8A2BE2&border_color=222533&hide_border=false" alt="Adonis-Lee's GitHub Stats" />
+  <!-- Özel JJK temalı istatistik kartı (Çalışan güncel sunucu yönlendirmesiyle) -->
+  <img height="170" src="https://github-readme-stats-eight-beige.vercel.app/api?username=Adonis-Lee&show_icons=true&bg_color=0D0E15&title_color=00e5ff&text_color=E2E8F0&icon_color=8A2BE2&border_color=222533&hide_border=false" alt="Adonis-Lee's GitHub Stats" />
   
   <!-- Özel JJK temalı streak kartı -->
   <img height="170" src="https://github-readme-streak-stats.herokuapp.com/?user=Adonis-Lee&theme=dark&background=0D0E15&title=00e5ff&ring=8A2BE2&fire=00e5ff&currStreakNum=E2E8F0&sideNums=E2E8F0&sideLabels=E2E8F0&currStreakLabel=00e5ff&border=222533" alt="Adonis-Lee's Streak Stats" />
