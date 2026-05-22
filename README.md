@@ -1,10 +1,25 @@
+# 🔮 JJK Profile README — Mehmet Anıl ÜLKÜ
+
+Here is your updated GitHub profile README with the JJK style (colors, badges, and stats cards) but without any explicit character names or lore terms in the headings and text:
+
+Copy and paste the markdown below into your GitHub profile `README.md` file:
+
+```markdown
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=Adonis-Lee&color=00e5ff&style=flat-square" alt="Visitor Count" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://komarev.com/ghpvc/?username=Adonis-Lee&color=00e5ff&style=flat-square" />
+    <source media="(prefers-color-scheme: light)" srcset="https://komarev.com/ghpvc/?username=Adonis-Lee&color=6d28d9&style=flat-square" />
+    <img src="https://komarev.com/ghpvc/?username=Adonis-Lee&color=6d28d9&style=flat-square" alt="Visitor Count" />
+  </picture>
 </p>
 
 <div align="center">
-  <!-- Buz mavisi özel hareketli yazı efekti -->
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&pause=1000&color=00e5ff&center=true&vCenter=true&width=750&lines=Mehmet+An%C4%B1l+%C3%9CLK%C3%9C;Game+Developer+%F0%9F%8E%AE;EEE+%26+CENG+Student+%E2%9A%A1;Code+%E2%80%A2+Design+%E2%80%A2+Create+%F0%9F%9A%80" />
+  <!-- Theme-aware typing SVG (Ice-blue for dark mode, Deep Purple for light mode) -->
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&pause=1000&color=00e5ff&center=true&vCenter=true&width=750&lines=Mehmet+An%C4%B1l+%C3%9CLK%C3%9C;Game+Developer+%F0%9F%8E%AE;EEE+%26+CENG+Student+%E2%9A%A1;Code+%E2%80%A2+Design+%E2%80%A2+Create+%F0%9F%9A%80" />
+    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&pause=1000&color=6d28d9&center=true&vCenter=true&width=750&lines=Mehmet+An%C4%B1l+%C3%9CLK%C3%9C;Game+Developer+%F0%9F%8E%AE;EEE+%26+CENG+Student+%E2%9A%A1;Code+%E2%80%A2+Design+%E2%80%A2+Create+%F0%9F%9A%80" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&pause=1000&color=6d28d9&center=true&vCenter=true&width=750&lines=Mehmet+An%C4%B1l+%C3%9CLK%C3%9C;Game+Developer+%F0%9F%8E%AE;EEE+%26+CENG+Student+%E2%9A%A1;Code+%E2%80%A2+Design+%E2%80%A2+Create+%F0%9F%9A%80" alt="Mehmet Anıl ÜLKÜ Typing" />
+  </picture>
 </div>
 
 ---
@@ -44,16 +59,29 @@
 ## 📊 Developer Stats
 
 <div align="center">
-  <!-- Özel JJK temalı istatistik kartı (Çalışan güncel sunucu yönlendirmesiyle) -->
-  <img height="170" src="https://github-readme-stats-eight-beige.vercel.app/api?username=Adonis-Lee&show_icons=true&bg_color=0D0E15&title_color=00e5ff&text_color=E2E8F0&icon_color=8A2BE2&border_color=222533&hide_border=false" alt="Adonis-Lee's GitHub Stats" />
+  <!-- Theme-aware stats card (Ice-blue for dark mode, Purple/Slate for light mode) -->
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-beige.vercel.app/api?username=Adonis-Lee&show_icons=true&bg_color=0D0E15&title_color=00e5ff&text_color=E2E8F0&icon_color=8A2BE2&border_color=222533&hide_border=false" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-beige.vercel.app/api?username=Adonis-Lee&show_icons=true&bg_color=F8FAFC&title_color=6D28D9&text_color=1E293B&icon_color=4F46E5&border_color=E2E8F0&hide_border=false" />
+    <img height="170" src="https://github-readme-stats-eight-beige.vercel.app/api?username=Adonis-Lee&show_icons=true&bg_color=F8FAFC&title_color=6D28D9&text_color=1E293B&icon_color=4F46E5&border_color=E2E8F0&hide_border=false" alt="Adonis-Lee's GitHub Stats" />
+  </picture>
   
-  <!-- Özel JJK temalı streak kartı -->
-  <img height="170" src="https://github-readme-streak-stats.herokuapp.com/?user=Adonis-Lee&theme=dark&background=0D0E15&title=00e5ff&ring=8A2BE2&fire=00e5ff&currStreakNum=E2E8F0&sideNums=E2E8F0&sideLabels=E2E8F0&currStreakLabel=00e5ff&border=222533" alt="Adonis-Lee's Streak Stats" />
+  <!-- Theme-aware streak stats card (Ice-blue for dark mode, Purple/Slate for light mode) -->
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=Adonis-Lee&theme=dark&background=0D0E15&title=00e5ff&ring=8A2BE2&fire=00e5ff&currStreakNum=E2E8F0&sideNums=E2E8F0&sideLabels=E2E8F0&currStreakLabel=00e5ff&border=222533" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=Adonis-Lee&background=F8FAFC&title=6D28D9&ring=4F46E5&fire=6D28D9&currStreakNum=1E293B&sideNums=1E293B&sideLabels=475569&currStreakLabel=6D28D9&border=E2E8F0" />
+    <img height="170" src="https://github-readme-streak-stats.herokuapp.com/?user=Adonis-Lee&background=F8FAFC&title=6D28D9&ring=4F46E5&fire=6D28D9&currStreakNum=1E293B&sideNums=1E293B&sideLabels=475569&currStreakLabel=6D28D9&border=E2E8F0" alt="Adonis-Lee's Streak Stats" />
+  </picture>
 </div>
 
 ---
 
-<!-- Contribution Snake -->
+<!-- Theme-aware Contribution Snake -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Adonis-Lee/Adonis-Lee/output/github-contribution-grid-snake-dark.svg" alt="Snake Game Grid" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Adonis-Lee/Adonis-Lee/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Adonis-Lee/Adonis-Lee/output/github-contribution-grid-snake.svg" />
+    <img src="https://raw.githubusercontent.com/Adonis-Lee/Adonis-Lee/output/github-contribution-grid-snake.svg" alt="Snake Game Grid" />
+  </picture>
 </p>
+```
