@@ -31,13 +31,13 @@
 ## 🛠️ Tech Stack
 
 ### 🎮 Game Development
-[![Unity](https://img.shields.io/badge/Unity-101010?style=for-the-badge&logo=unity&logoColor=00E5FF)](https://unity.com/) [![Unreal Engine](https://img.shields.io/badge/Unreal%20Engine-101010?style=for-the-badge&logo=unrealengine&logoColor=8A2BE2)](https://www.unrealengine.com/) [![Blender](https://img.shields.io/badge/Blender-101010?style=for-the-badge&logo=blender&logoColor=00E5FF)](https://www.blender.org/)
+![Unity](https://img.shields.io/badge/Unity-101010?style=for-the-badge&logo=unity&logoColor=00E5FF) ![Unreal Engine](https://img.shields.io/badge/Unreal%20Engine-101010?style=for-the-badge&logo=unrealengine&logoColor=8A2BE2) ![Blender](https://img.shields.io/badge/Blender-101010?style=for-the-badge&logo=blender&logoColor=00E5FF)
 
 ### ⚙️ Engineering & Simulation
-[![SolidWorks](https://img.shields.io/badge/SolidWorks-101010?style=for-the-badge&logo=dassaultsystemes&logoColor=8A2BE2)](https://www.solidworks.com/) [![MATLAB](https://img.shields.io/badge/MATLAB-101010?style=for-the-badge&logo=mathworks&logoColor=00E5FF)](https://www.mathworks.com/products/matlab.html)
+![SolidWorks](https://img.shields.io/badge/SolidWorks-101010?style=for-the-badge&logo=dassaultsystemes&logoColor=8A2BE2) ![MATLAB](https://img.shields.io/badge/MATLAB-101010?style=for-the-badge&logo=mathworks&logoColor=00E5FF)
 
 ### 💻 Programming
-[![C#](https://img.shields.io/badge/C%23-101010?style=for-the-badge&logo=csharp&logoColor=00E5FF)](https://docs.microsoft.com/en-us/dotnet/csharp/) [![C++](https://img.shields.io/badge/C%2B%2B-101010?style=for-the-badge&logo=cplusplus&logoColor=8A2BE2)](https://isocpp.org/) [![Python](https://img.shields.io/badge/Python-101010?style=for-the-badge&logo=python&logoColor=00E5FF)](https://www.python.org/) [![C](https://img.shields.io/badge/C-101010?style=for-the-badge&logo=c&logoColor=8A2BE2)](https://en.cppreference.com/w/c)
+![C#](https://img.shields.io/badge/C%23-101010?style=for-the-badge&logo=csharp&logoColor=00E5FF) ![C++](https://img.shields.io/badge/C%2B%2B-101010?style=for-the-badge&logo=cplusplus&logoColor=8A2BE2) ![Python](https://img.shields.io/badge/Python-101010?style=for-the-badge&logo=python&logoColor=00E5FF) ![C](https://img.shields.io/badge/C-101010?style=for-the-badge&logo=c&logoColor=8A2BE2)
 
 ---
 
@@ -53,7 +53,7 @@
 
 ---
 
-<!-- Karanlık temalı Yılan Oyunu Katkı Grafiği -->
+<!-- Contribution Snake -->
 <p align="center">
   <img src="https://raw.githubusercontent.com/Adonis-Lee/Adonis-Lee/output/github-contribution-grid-snake-dark.svg" alt="Snake Game Grid" />
 </p>
