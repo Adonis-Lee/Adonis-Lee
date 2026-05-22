@@ -1,10 +1,3 @@
-# 🔮 JJK Profile README — Mehmet Anıl ÜLKÜ
-
-Here is your updated GitHub profile README with the JJK style (colors, badges, and stats cards) but without any explicit character names or lore terms in the headings and text:
-
-Copy and paste the markdown below into your GitHub profile `README.md` file:
-
-```markdown
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://komarev.com/ghpvc/?username=Adonis-Lee&color=00e5ff&style=flat-square" />
