@@ -59,7 +59,7 @@
 </p>
 
 <p align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Adonis-Lee/Adonis-Lee/output/github-contribution-grid-snake-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Adonis-Lee/Adonis-Lee/output/github-contribution-grid-snake.svg" /><img width="100%" src="https://raw.githubusercontent.com/Adonis-Lee/Adonis-Lee/output/github-contribution-grid-snake.svg" alt="Contribution snake" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Adonis-Lee/Adonis-Lee/output/github-contribution-grid-snake-dark.svg?v=energy" /><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Adonis-Lee/Adonis-Lee/output/github-contribution-grid-snake.svg?v=energy" /><img width="100%" src="https://raw.githubusercontent.com/Adonis-Lee/Adonis-Lee/output/github-contribution-grid-snake.svg?v=energy" alt="Contribution snake" /></picture>
 </p>
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/divider-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/divider-light.svg" /><img width="100%" src="assets/divider-light.svg" alt="" /></picture></p>

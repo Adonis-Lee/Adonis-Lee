@@ -91,7 +91,7 @@ ${divider}
 </p>
 
 <p align="center">
-  ${pic((c, k) => `https://raw.githubusercontent.com/${U}/${U}/output/github-contribution-grid-snake${k === "dark" ? "-dark" : ""}.svg`, "Contribution snake", 'width="100%"')}
+  ${pic((c, k) => `https://raw.githubusercontent.com/${U}/${U}/output/github-contribution-grid-snake${k === "dark" ? "-dark" : ""}.svg?v=energy`, "Contribution snake", 'width="100%"')}
 </p>
 
 ${divider}
