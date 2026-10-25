@@ -7,17 +7,17 @@ const T = {
   dark: {
     bg0: "#010409", bg1: "#03101A", text: "#F2FEFF", textGlow: "#7FF0FF",
     // heat ramp per channel, indexed by flame intensity
-    r: "0 0.01 0.02 0.08 0.45 0.95", g: "0 0.16 0.33 0.62 0.9 1", b: "0 0.24 0.48 0.8 0.98 1", a: "0 0 0.12 0.6 0.95 1",
-    smoke: "#0B4E62", ember: "#BDF8FF", smokeOp: 0.45, glowOp: 0.6,
+    r: "0 0.01 0.02 0.06 0.3 0.68", g: "0 0.16 0.33 0.6 0.86 0.97", b: "0 0.24 0.48 0.78 0.96 1", a: "0 0 0.12 0.6 0.95 1",
+    smoke: "#0B4E62", ember: "#BDF8FF", smokeOp: 0.45, glowOp: 0.45,
   },
   light: {
     bg0: "#F5FBFD", bg1: "#DDEFF5", text: "#03222B", textGlow: "#1592AE",
     r: "0.7 0.5 0.25 0.12 0.05 0.04", g: "0.9 0.84 0.72 0.6 0.5 0.45", b: "0.94 0.9 0.82 0.74 0.62 0.56", a: "0 0 0.1 0.5 0.8 0.9",
-    smoke: "#8ACCDB", ember: "#0B7A93", smokeOp: 0.45, glowOp: 0.35,
+    smoke: "#8ACCDB", ember: "#0B7A93", smokeOp: 0.45, glowOp: 0.25,
   },
 };
 const font = `font-family="'Segoe UI Black','Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900"`;
-const name = (attrs) => `<text x="600" y="212" text-anchor="middle" ${font} font-size="78" letter-spacing="5" ${attrs}>MEHMET ANIL ÜLKÜ</text>`;
+const name = (attrs) => `<text x="600" y="232" text-anchor="middle" ${font} font-size="72" letter-spacing="6" ${attrs}>MEHMET ANIL ÜLKÜ</text>`;
 
 // A seamless noise tile (stitchTiles) exposed as white with alpha = noise
 const noise = (id, freq, oct, seed) => `
@@ -31,7 +31,7 @@ function banner(k) {
   const c = T[k];
   const embers = Array.from({ length: 16 }, (_, i) => {
     const x = 190 + ((i * 197) % 820), d = 3 + (i % 5) * 0.9, r = 1.2 + (i % 3) * 0.7;
-    return `<circle class="em" cx="${x}" cy="190" r="${r}" style="animation-duration:${d}s;animation-delay:-${(i * 0.73) % d}s;--dx:${(i % 2 ? 1 : -1) * (8 + (i % 4) * 6)}px"/>`;
+    return `<circle class="em" cx="${x}" cy="160" r="${r}" style="animation-duration:${d}s;animation-delay:-${(i * 0.73) % d}s;--dx:${(i % 2 ? 1 : -1) * (8 + (i % 4) * 6)}px"/>`;
   }).join("");
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">
   <title>Mehmet Anıl ÜLKÜ</title>
@@ -39,15 +39,16 @@ function banner(k) {
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c.bg0}"/><stop offset="1" stop-color="${c.bg1}"/></linearGradient>
     ${noise("n1", "0.022 0.009", 4, 4)}
     ${noise("n2", "0.05 0.02", 3, 9)}
-    <!-- aura envelope: glyphs swollen and smeared upward, brightest at the letters -->
+    <!-- aura envelope: glyphs swollen and smeared upward, rising from just above the letters -->
     <filter id="env" x="-10%" y="-200%" width="120%" height="320%" color-interpolation-filters="sRGB">
       <feMorphology in="SourceAlpha" operator="dilate" radius="3" result="d"/>
-      <feGaussianBlur in="d" stdDeviation="10 14" result="b0"/>
+      <feGaussianBlur in="d" stdDeviation="8 20" result="b0"/>
+      <feOffset in="b0" dy="-26" result="b0u"/>
       <feGaussianBlur in="d" stdDeviation="10 40" result="b1"/>
       <feOffset in="b1" dy="-50" result="b1u"/>
       <feGaussianBlur in="d" stdDeviation="14 60" result="b2"/>
       <feOffset in="b2" dy="-95" result="b2u"/>
-      <feMerge result="m"><feMergeNode in="b2u"/><feMergeNode in="b1u"/><feMergeNode in="b0"/></feMerge>
+      <feMerge result="m"><feMergeNode in="b2u"/><feMergeNode in="b1u"/><feMergeNode in="b0u"/></feMerge>
       <feTurbulence type="fractalNoise" baseFrequency="0.035 0.003" numOctaves="2" seed="13" result="cols"/>
       <feComponentTransfer in="cols" result="colsK"><feFuncA type="linear" slope="2.6" intercept="-0.7"/></feComponentTransfer>
       <feComposite in="m" in2="colsK" operator="arithmetic" k1="1.6" k2="0.45" result="mc"/>
@@ -58,11 +59,12 @@ function banner(k) {
     <filter id="heat" x="0" y="0" width="100%" height="100%" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
       <feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="2" result="w"/>
       <feDisplacementMap in="SourceGraphic" in2="w" scale="22" xChannelSelector="R" yChannelSelector="G" result="s"/>
-      <feColorMatrix in="s" values="0 0 0 1 0  0 0 0 1 0  0 0 0 1 0  0 0 0 1 0" result="i"/>
-      <feComponentTransfer in="i" result="col">
-        <feFuncR type="table" tableValues="${c.r}"/><feFuncG type="table" tableValues="${c.g}"/>
-        <feFuncB type="table" tableValues="${c.b}"/><feFuncA type="table" tableValues="${c.a}"/>
+      <feColorMatrix in="s" values="0 0 0 1 0  0 0 0 1 0  0 0 0 1 0  0 0 0 0 1" result="i"/>
+      <feComponentTransfer in="i" result="rgb">
+        <feFuncR type="table" tableValues="${c.r}"/><feFuncG type="table" tableValues="${c.g}"/><feFuncB type="table" tableValues="${c.b}"/>
       </feComponentTransfer>
+      <feComponentTransfer in="s" result="a"><feFuncA type="table" tableValues="${c.a}"/></feComponentTransfer>
+      <feComposite in="rgb" in2="a" operator="in" result="col"/>
       <feGaussianBlur in="col" stdDeviation="8" result="glow"/>
       <feMerge><feMergeNode in="glow"/><feMergeNode in="col"/></feMerge>
     </filter>
@@ -72,8 +74,18 @@ function banner(k) {
     </filter>
     <linearGradient id="lowG" x1="0" y1="0" x2="0" y2="1"><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff"/></linearGradient>
     <mask id="low"><rect width="${W}" height="${H}" fill="url(#lowG)"/></mask>
+    <filter id="moat" x="-5%" y="-80%" width="110%" height="260%">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="5" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="7 16" result="soft"/>
+      <feGaussianBlur in="d" stdDeviation="2" result="hard"/>
+      <feMerge result="m"><feMergeNode in="soft"/><feMergeNode in="soft"/><feMergeNode in="hard"/></feMerge>
+      <feTurbulence type="fractalNoise" baseFrequency="0.045 0.02" numOctaves="2" seed="17" result="rag"/>
+      <feDisplacementMap in="m" in2="rag" scale="26" xChannelSelector="R" yChannelSelector="G" result="mr"/>
+      <feMerge><feMergeNode in="mr"/><feMergeNode in="hard"/></feMerge>
+    </filter>
+    <mask id="clear" maskUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="#fff"/>${name('fill="#000" filter="url(#moat)"')}</mask>
     <filter id="eglow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="1.6" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    <filter id="tglow" x="-5%" y="-50%" width="110%" height="200%"><feGaussianBlur stdDeviation="5 7"/></filter>
+    <filter id="tglow" x="-5%" y="-50%" width="110%" height="200%"><feGaussianBlur stdDeviation="2.5"/></filter>
     <clipPath id="clip"><rect width="${W}" height="${H}" rx="18"/></clipPath>
   </defs>
   <style>
@@ -87,6 +99,7 @@ function banner(k) {
   </style>
   <g clip-path="url(#clip)">
     <rect width="${W}" height="${H}" fill="url(#bg)"/>
+    <g mask="url(#clear)">
     <g mask="url(#low)" opacity="${c.smokeOp}"><g filter="url(#smoke)"><rect class="up3" width="${W}" height="${H * 2}" fill="url(#n1-p)"/></g></g>
     <g filter="url(#heat)">
       <g mask="url(#aura)">
@@ -95,6 +108,7 @@ function banner(k) {
       </g>
     </g>
     ${embers}
+    </g>
     ${name(`fill="${c.textGlow}" filter="url(#tglow)" opacity="${c.glowOp}"`)}
     ${name(`fill="${c.text}"`)}
   </g>
