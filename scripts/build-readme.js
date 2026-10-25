@@ -19,31 +19,23 @@ const divider = `<p align="center">${pic((c, k) => `assets/divider-${k}.svg`, ""
 const badge = (label, logo) => pic((c) => `https://img.shields.io/badge/${label}-${c.badge}?style=for-the-badge&logo=${logo}&logoColor=${c.logo}`, decodeURIComponent(label));
 const pin = (repo) => linked(`https://github.com/${U}/${repo}`, pic((c) => `${STATS}/pin/?username=${U}&repo=${repo}&show_owner=false&description_lines_count=2&cache_seconds=21600&${card(c)}`, repo, 'width="48%"'));
 
-const typing = (c) => "https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=3500&pause=1200&center=true&vCenter=true&width=640&height=40&color=" + c.title + "&lines=" + [
-  "Turning ideas into interactive experiences",
-  "Learning Blender → anime-style 3D animation",
-  "Unity · Unreal Engine · Real-time systems",
-  "EEE & CENG student",
-].map(encodeURIComponent).join(";");
+// Header panel: banner, typing line and link buttons are stacked slices (from build-banner.js) that read as
+// one panel. They sit in a single paragraph with no whitespace between them and align="top", so no gaps appear.
+const layout = JSON.parse(fs.readFileSync(`${__dirname}/../assets/header.json`, "utf8"));
+const pct = (w) => Math.floor((w / layout.W) * 1e4) / 100;
+const slice = (s, i) => {
+  const w = i === layout.slices.length - 1 ? (100 - layout.slices.slice(0, -1).reduce((a, x) => a + pct(x.w), 0) - 0.01).toFixed(2) : pct(s.w);
+  const img = pic((c, k) => `assets/${s.file}-${k}.svg`, s.alt || "", `width="${w}%" align="top"`);
+  return s.href ? linked(s.href, img) : img;
+};
+const header = [
+  pic((c, k) => `assets/banner-${k}.svg`, "Mehmet Anıl ÜLKÜ", 'width="100%" align="top"'),
+  pic((c, k) => `assets/typing-${k}.svg`, "Turning ideas into interactive experiences", 'width="100%" align="top"'),
+  layout.slices.map(slice).join(""),
+].join("<br>");
+const views = pic((c) => `https://komarev.com/ghpvc/?username=${U}&label=profile%20views&color=${c.title}&style=flat-square`, "Profile views");
 
-const contact = [
-  linked("https://www.linkedin.com/in/mehmetanilulku/", pic((c) => `https://img.shields.io/badge/LinkedIn-${c.badge}?style=for-the-badge&logo=linkedin&logoColor=${c.logo}`, "LinkedIn")),
-  linked("mailto:mehmetulku2003@gmail.com", pic((c) => `https://img.shields.io/badge/Email-${c.badge}?style=for-the-badge&logo=gmail&logoColor=${c.logo}`, "Email")),
-  linked(`https://github.com/${U}`, pic((c) => `https://img.shields.io/badge/GitHub-${c.badge}?style=for-the-badge&logo=github&logoColor=${c.logo}`, "GitHub")),
-  pic((c) => `https://komarev.com/ghpvc/?username=${U}&label=views&color=${c.title}&style=for-the-badge`, "Profile views"),
-].join("\n  ");
-
-const md = `<p align="center">
-  ${pic((c, k) => `assets/banner-${k}.svg`, "Mehmet Anıl ÜLKÜ — Game Developer · 3D & Animation · Real-Time Systems", 'width="100%"')}
-</p>
-
-<p align="center">
-  ${pic(typing, "Turning ideas into interactive experiences")}
-</p>
-
-<p align="center">
-  ${contact}
-</p>
+const md = `<p align="center">${header}</p>
 
 ${divider}
 
@@ -91,9 +83,11 @@ ${divider}
 </p>
 
 <p align="center">
-  ${pic((c, k) => `https://raw.githubusercontent.com/${U}/${U}/output/github-contribution-grid-snake${k === "dark" ? "-dark" : ""}.svg?v=energy`, "Contribution snake", 'width="100%"')}
+  ${pic((c, k) => `https://raw.githubusercontent.com/${U}/${U}/output/github-contribution-grid-snake${k === "dark" ? "-dark" : ""}.svg?v=violet`, "Contribution snake", 'width="100%"')}
 </p>
 
 ${divider}
+
+<p align="center">${views}</p>
 `;
 fs.writeFileSync(process.argv[2], md);

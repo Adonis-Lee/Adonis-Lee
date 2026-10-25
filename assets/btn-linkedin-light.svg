@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 166 82" width="166" height="82">
+  <title>LinkedIn</title>
+  <defs><linearGradient id="bg" gradientUnits="userSpaceOnUse" x1="0" y1="-360" x2="0" y2="82"><stop offset="0" stop-color="#F3F9FB"/><stop offset="1" stop-color="#E0EEF2"/></linearGradient></defs>
+  <rect width="166" height="82" fill="url(#bg)"/>
+  <rect x="8.75" y="12.75" width="148.5" height="42.5" rx="9" fill="#FFFFFF" stroke="#0B6E82" stroke-opacity=".45" stroke-width="1.5"/>
+  <g transform="translate(26 23)"><rect x="0" y="0" width="22" height="22" rx="4" fill="#0B6E82"/><text x="11" y="17" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-weight="800" font-size="15" fill="#0B2129">in</text></g>
+  <text x="58" y="40.5" textLength="81.6" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-weight="600" font-size="17" letter-spacing=".5" fill="#0B4F5E">LinkedIn</text>
+</svg>

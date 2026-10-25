@@ -1,0 +1,31 @@
+{
+  "W": 1200,
+  "slices": [
+    {
+      "file": "btn-left",
+      "w": 377
+    },
+    {
+      "file": "btn-linkedin",
+      "w": 166,
+      "href": "https://www.linkedin.com/in/mehmetanilulku/",
+      "alt": "LinkedIn"
+    },
+    {
+      "file": "btn-email",
+      "w": 135,
+      "href": "mailto:mehmetulku2003@gmail.com",
+      "alt": "Email"
+    },
+    {
+      "file": "btn-github",
+      "w": 145,
+      "href": "https://github.com/Adonis-Lee",
+      "alt": "GitHub"
+    },
+    {
+      "file": "btn-right",
+      "w": 377
+    }
+  ]
+}

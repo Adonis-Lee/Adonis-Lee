@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60" width="1200" height="60">
+  <title>Turning ideas into interactive experiences</title>
+  <defs><linearGradient id="bg" gradientUnits="userSpaceOnUse" x1="0" y1="-300" x2="0" y2="142"><stop offset="0" stop-color="#F3F9FB"/><stop offset="1" stop-color="#E0EEF2"/></linearGradient></defs>
+  <style>@keyframes tw0{0%,0.000%{transform:scaleX(0);animation-timing-function:steps(42,end)}10.000%,19.000%{transform:scaleX(1);animation-timing-function:steps(42,end)}22.500%,100%{transform:scaleX(0)}}
+@keyframes cu0{0%,0.000%{opacity:0;transform:translateX(0)}0.000%{opacity:1;transform:translateX(0);animation-timing-function:steps(42,end)}10.000%,19.000%{opacity:1;transform:translateX(655.1999999999999px);animation-timing-function:steps(42,end)}22.500%{opacity:1;transform:translateX(0)}22.510%,100%{opacity:0}}
+.r0{transform-origin:272.40000000000003px 0;transform:scaleX(0);animation:tw0 18s linear infinite}.k0{opacity:0;animation:cu0 18s linear infinite}
+@keyframes tw1{0%,25.000%{transform:scaleX(0);animation-timing-function:steps(43,end)}35.000%,44.000%{transform:scaleX(1);animation-timing-function:steps(43,end)}47.500%,100%{transform:scaleX(0)}}
+@keyframes cu1{0%,24.990%{opacity:0;transform:translateX(0)}25.000%{opacity:1;transform:translateX(0);animation-timing-function:steps(43,end)}35.000%,44.000%{opacity:1;transform:translateX(670.8px);animation-timing-function:steps(43,end)}47.500%{opacity:1;transform:translateX(0)}47.510%,100%{opacity:0}}
+.r1{transform-origin:264.6px 0;transform:scaleX(0);animation:tw1 18s linear infinite}.k1{opacity:0;animation:cu1 18s linear infinite}
+@keyframes tw2{0%,50.000%{transform:scaleX(0);animation-timing-function:steps(41,end)}60.000%,69.000%{transform:scaleX(1);animation-timing-function:steps(41,end)}72.500%,100%{transform:scaleX(0)}}
+@keyframes cu2{0%,49.990%{opacity:0;transform:translateX(0)}50.000%{opacity:1;transform:translateX(0);animation-timing-function:steps(41,end)}60.000%,69.000%{opacity:1;transform:translateX(639.6px);animation-timing-function:steps(41,end)}72.500%{opacity:1;transform:translateX(0)}72.510%,100%{opacity:0}}
+.r2{transform-origin:280.2px 0;transform:scaleX(0);animation:tw2 18s linear infinite}.k2{opacity:0;animation:cu2 18s linear infinite}
+@keyframes tw3{0%,75.000%{transform:scaleX(0);animation-timing-function:steps(18,end)}85.000%,94.000%{transform:scaleX(1);animation-timing-function:steps(18,end)}97.500%,100%{transform:scaleX(0)}}
+@keyframes cu3{0%,74.990%{opacity:0;transform:translateX(0)}75.000%{opacity:1;transform:translateX(0);animation-timing-function:steps(18,end)}85.000%,94.000%{opacity:1;transform:translateX(280.8px);animation-timing-function:steps(18,end)}97.500%{opacity:1;transform:translateX(0)}97.510%,100%{opacity:0}}
+.r3{transform-origin:459.6px 0;transform:scaleX(0);animation:tw3 18s linear infinite}.k3{opacity:0;animation:cu3 18s linear infinite}
+@media (prefers-reduced-motion:reduce){[class^=r],[class^=k]{animation:none}.r0{transform:none}}</style>
+  <rect width="1200" height="60" fill="url(#bg)"/>
+    <clipPath id="t0"><rect class="r0" x="272.40000000000003" y="0" width="655.1999999999999" height="60"/></clipPath>
+    <text clip-path="url(#t0)" x="272.40000000000003" y="38" textLength="655.1999999999999" lengthAdjust="spacingAndGlyphs" font-family="Consolas,'Fira Code',Menlo,monospace" font-size="26" fill="#0B6E82">Turning ideas into interactive experiences</text>
+    <rect class="k0" x="273.40000000000003" y="16" width="3" height="28" fill="#0B6E82"/>
+    <clipPath id="t1"><rect class="r1" x="264.6" y="0" width="670.8" height="60"/></clipPath>
+    <text clip-path="url(#t1)" x="264.6" y="38" textLength="670.8" lengthAdjust="spacingAndGlyphs" font-family="Consolas,'Fira Code',Menlo,monospace" font-size="26" fill="#0B6E82">Learning Blender → anime-style 3D animation</text>
+    <rect class="k1" x="265.6" y="16" width="3" height="28" fill="#0B6E82"/>
+    <clipPath id="t2"><rect class="r2" x="280.2" y="0" width="639.6" height="60"/></clipPath>
+    <text clip-path="url(#t2)" x="280.2" y="38" textLength="639.6" lengthAdjust="spacingAndGlyphs" font-family="Consolas,'Fira Code',Menlo,monospace" font-size="26" fill="#0B6E82">Unity · Unreal Engine · Real-time systems</text>
+    <rect class="k2" x="281.2" y="16" width="3" height="28" fill="#0B6E82"/>
+    <clipPath id="t3"><rect class="r3" x="459.6" y="0" width="280.8" height="60"/></clipPath>
+    <text clip-path="url(#t3)" x="459.6" y="38" textLength="280.8" lengthAdjust="spacingAndGlyphs" font-family="Consolas,'Fira Code',Menlo,monospace" font-size="26" fill="#0B6E82">EEE &amp; CENG student</text>
+    <rect class="k3" x="460.6" y="16" width="3" height="28" fill="#0B6E82"/>
+    
+</svg>

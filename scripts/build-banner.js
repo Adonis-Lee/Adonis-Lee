@@ -5,6 +5,9 @@
 // SVG filters + CSS only, so it renders inside <img> on github.com.
 const fs = require("fs");
 const W = 1200, H = 300;
+// The header panel is stacked from slices (banner, typing line, link buttons) that share one gradient
+const TYPE_H = 60, BTN_H = 82, PANEL_H = H + TYPE_H + BTN_H;
+const panelBg = (c, top) => `<linearGradient id="bg" gradientUnits="userSpaceOnUse" x1="0" y1="${-top}" x2="0" y2="${PANEL_H - top}"><stop offset="0" stop-color="${c.bg0}"/><stop offset="1" stop-color="${c.bg1}"/></linearGradient>`;
 const T = {
   dark: {
     bg0: "#03080C", bg1: "#071820", text: "#F2FEFF", ink: "#010406",
@@ -88,7 +91,7 @@ function banner(k) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">
   <title>Mehmet Anıl ÜLKÜ</title>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c.bg0}"/><stop offset="1" stop-color="${c.bg1}"/></linearGradient>
+    ${panelBg(c, 0)}
     ${noise("n1", "0.006 0.009", 3, 4)}
     <!-- soft blob around the name, a little taller on top so lobes rise -->
     <filter id="env" x="-25%" y="-300%" width="150%" height="700%" color-interpolation-filters="sRGB">
@@ -143,7 +146,7 @@ function banner(k) {
     </filter>
     <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.2"/><feComponentTransfer><feFuncA type="linear" slope="1.5"/></feComponentTransfer></filter>
     <filter id="tglow" x="-5%" y="-50%" width="110%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
-    <clipPath id="clip"><rect width="${W}" height="${H}" rx="18"/></clipPath>
+    <clipPath id="clip"><path d="M0 18Q0 0 18 0H${W - 18}Q${W} 0 ${W} 18V${H}H0Z"/></clipPath>
   </defs>
   <style>
     .up{animation:up 18s linear infinite}
@@ -170,6 +173,74 @@ function banner(k) {
 </svg>
 `;
 }
+// Typing line slice: each line types in, holds, erases; one line at a time on an 18s loop
+const LINES = ["Turning ideas into interactive experiences", "Learning Blender → anime-style 3D animation", "Unity · Unreal Engine · Real-time systems", "EEE & CENG student"];
+const TYPE = { dark: { ink: "#6FF5F7" }, light: { ink: "#0B6E82" } };
+function typing(k) {
+  const c = { ...T[k], ...TYPE[k] }, cw = 15.6, slot = 1 / LINES.length, pct = (v) => (v * 100).toFixed(3) + "%";
+  let css = "", body = "";
+  LINES.forEach((line, i) => {
+    const n = [...line].length, L = n * cw, x0 = (W - L) / 2, s0 = i * slot, s1 = s0 + 0.1, s2 = s0 + 0.19, s3 = s0 + 0.225;
+    css += `@keyframes tw${i}{0%,${pct(s0)}{transform:scaleX(0);animation-timing-function:steps(${n},end)}${pct(s1)},${pct(s2)}{transform:scaleX(1);animation-timing-function:steps(${n},end)}${pct(s3)},100%{transform:scaleX(0)}}
+`;
+    css += `@keyframes cu${i}{0%,${pct(Math.max(0, s0 - 0.0001))}{opacity:0;transform:translateX(0)}${pct(s0)}{opacity:1;transform:translateX(0);animation-timing-function:steps(${n},end)}${pct(s1)},${pct(s2)}{opacity:1;transform:translateX(${L}px);animation-timing-function:steps(${n},end)}${pct(s3)}{opacity:1;transform:translateX(0)}${pct(s3 + 0.0001)},100%{opacity:0}}
+`;
+    css += `.r${i}{transform-origin:${x0}px 0;transform:scaleX(0);animation:tw${i} 18s linear infinite}.k${i}{opacity:0;animation:cu${i} 18s linear infinite}
+`;
+    body += `<clipPath id="t${i}"><rect class="r${i}" x="${x0}" y="0" width="${L}" height="${TYPE_H}"/></clipPath>
+    <text clip-path="url(#t${i})" x="${x0}" y="38" textLength="${L}" lengthAdjust="spacingAndGlyphs" font-family="Consolas,'Fira Code',Menlo,monospace" font-size="26" fill="${c.ink}">${line.replace("&", "&amp;")}</text>
+    <rect class="k${i}" x="${x0 + 1}" y="16" width="3" height="28" fill="${c.ink}"/>
+    `;
+  });
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${TYPE_H}" width="${W}" height="${TYPE_H}">
+  <title>${LINES[0]}</title>
+  <defs>${panelBg(c, H)}</defs>
+  <style>${css}@media (prefers-reduced-motion:reduce){[class^=r],[class^=k]{animation:none}.r0{transform:none}}</style>
+  <rect width="${W}" height="${TYPE_H}" fill="url(#bg)"/>
+    ${body}
+</svg>
+`;
+}
+
+// Link button slices: each button is its own image so it can be its own link; fillers close the panel
+const BTN = {
+  dark: { pill: "#0B2129", edge: "#6FF5F7", label: "#CFF7FA", icon: "#6FF5F7" },
+  light: { pill: "#FFFFFF", edge: "#0B6E82", label: "#0B4F5E", icon: "#0B6E82" },
+};
+const ICONS = {
+  linkedin: (col) => `<rect x="0" y="0" width="22" height="22" rx="4" fill="${col}"/><text x="11" y="17" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-weight="800" font-size="15" fill="#0B2129">in</text>`,
+  email: (col) => `<rect x="1" y="4" width="20" height="14" rx="2.5" fill="none" stroke="${col}" stroke-width="2"/><path d="M2 6l9 6.5L20 6" fill="none" stroke="${col}" stroke-width="2" stroke-linejoin="round"/>`,
+  github: (col) => `<g transform="scale(.9167)"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" fill="${col}"/></g>`,
+};
+const BUTTONS = [
+  { id: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/mehmetanilulku/" },
+  { id: "email", label: "Email", href: "mailto:mehmetulku2003@gmail.com" },
+  { id: "github", label: "GitHub", href: "https://github.com/Adonis-Lee" },
+];
+const PILL_H = 44, PAD = 18, GAP_ICON = 10, CH = 10.2, MARGIN = 8;
+const pillW = (b) => Math.round(PAD * 2 + 22 + GAP_ICON + b.label.length * CH);
+function button(k, b) {
+  const c = { ...T[k], ...BTN[k] }, pw = pillW(b), w = pw + MARGIN * 2, y = 12;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${BTN_H}" width="${w}" height="${BTN_H}">
+  <title>${b.label}</title>
+  <defs>${panelBg(c, H + TYPE_H)}</defs>
+  <rect width="${w}" height="${BTN_H}" fill="url(#bg)"/>
+  <rect x="${MARGIN + 0.75}" y="${y + 0.75}" width="${pw - 1.5}" height="${PILL_H - 1.5}" rx="9" fill="${c.pill}" stroke="${c.edge}" stroke-opacity=".45" stroke-width="1.5"/>
+  <g transform="translate(${MARGIN + PAD} ${y + 11})">${ICONS[b.id](c.icon)}</g>
+  <text x="${MARGIN + PAD + 22 + GAP_ICON}" y="${y + 28.5}" textLength="${(b.label.length * CH).toFixed(1)}" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-weight="600" font-size="17" letter-spacing=".5" fill="${c.label}">${b.label}</text>
+</svg>
+`;
+}
+function filler(k, side, w) {
+  const c = T[k], r = 18;
+  const d = side === "left" ? `M0 0H${w}V${BTN_H}H${r}Q0 ${BTN_H} 0 ${BTN_H - r}Z` : `M0 0H${w}V${BTN_H - r}Q${w} ${BTN_H} ${w - r} ${BTN_H}H0Z`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${BTN_H}" width="${w}" height="${BTN_H}">
+  <defs>${panelBg(c, H + TYPE_H)}</defs>
+  <path d="${d}" fill="url(#bg)"/>
+</svg>
+`;
+}
+
 // Section divider: a thin pulsing energy line
 const DIV = {
   dark: { glow: "#1FA9C9", core: "#7FEBF7" },
@@ -193,4 +264,12 @@ const out = process.argv[2];
 for (const k of ["dark", "light"]) {
   fs.writeFileSync(`${out}/banner-${k}.svg`, banner(k));
   fs.writeFileSync(`${out}/divider-${k}.svg`, divider(k));
+  fs.writeFileSync(`${out}/typing-${k}.svg`, typing(k));
+  for (const b of BUTTONS) fs.writeFileSync(`${out}/btn-${b.id}-${k}.svg`, button(k, b));
 }
+// Layout for build-readme.js: slice widths in banner units (W = 100%)
+const inner = BUTTONS.reduce((a, b) => a + pillW(b) + MARGIN * 2, 0), side = (W - inner) / 2;
+for (const k of ["dark", "light"]) { fs.writeFileSync(`${out}/btn-left-${k}.svg`, filler(k, "left", side)); fs.writeFileSync(`${out}/btn-right-${k}.svg`, filler(k, "right", side)); }
+fs.writeFileSync(`${out}/header.json`, JSON.stringify({ W, slices: [
+  { file: "btn-left", w: side }, ...BUTTONS.map((b) => ({ file: `btn-${b.id}`, w: pillW(b) + MARGIN * 2, href: b.href, alt: b.label })), { file: "btn-right", w: side },
+] }, null, 2) + "\n");

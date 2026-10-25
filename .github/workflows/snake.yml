@@ -27,8 +27,8 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-contribution-grid-snake.svg?color_snake=#0B6E82&color_dots=#DCEBF0,#A9DDE8,#5CC3D7,#1D97B0,#0B6E82&color_dot_border=#0000000f
-            dist/github-contribution-grid-snake-dark.svg?color_snake=#5CE1F0&color_dots=#15222B,#0E3A4A,#16627A,#2BA3BD,#5CE1F0&color_dot_border=#ffffff0d
+            dist/github-contribution-grid-snake.svg?color_snake=#7A3FD1&color_dots=#DCEBF0,#A9DDE8,#5CC3D7,#1D97B0,#0B6E82&color_dot_border=#0000000f
+            dist/github-contribution-grid-snake-dark.svg?color_snake=#B36BFF&color_dots=#15222B,#0E3A4A,#16627A,#2BA3BD,#5CE1F0&color_dot_border=#ffffff0d
 
       # Üretilen SVG'leri output branch'ine yükle (eski Node 20 action'ları yerine düz git)
       - name: Push to output branch
