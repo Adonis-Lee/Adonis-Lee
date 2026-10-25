@@ -17,7 +17,7 @@ const linked = (href, inner) => `<a href="${href}">${inner}</a>`;
 const divider = `<p align="center">${pic((c, k) => `assets/divider-${k}.svg`, "", 'width="100%"')}</p>`;
 
 const badge = (label, logo) => pic((c) => `https://img.shields.io/badge/${label}-${c.badge}?style=for-the-badge&logo=${logo}&logoColor=${c.logo}`, decodeURIComponent(label));
-const pin = (repo) => linked(`https://github.com/${U}/${repo}`, pic((c) => `${STATS}/pin/?username=${U}&repo=${repo}&show_owner=false&description_lines_count=2&${card(c)}`, repo, 'width="48%"'));
+const pin = (repo) => linked(`https://github.com/${U}/${repo}`, pic((c) => `${STATS}/pin/?username=${U}&repo=${repo}&show_owner=false&description_lines_count=2&cache_seconds=21600&${card(c)}`, repo, 'width="48%"'));
 
 const typing = (c) => "https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=3500&pause=1200&center=true&vCenter=true&width=640&height=40&color=" + c.title + "&lines=" + [
   "Turning ideas into interactive experiences",
