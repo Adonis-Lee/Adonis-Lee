@@ -1,115 +1,128 @@
 // Usage: node scripts/build-banner.js assets
-// Cursed-energy banner v2: seamless noise tiles scroll upward through a glyph-shaped aura mask,
-// then get mapped to a heat ramp (deep teal -> cyan -> white). SVG filters + CSS only.
+// Cursed-energy banner (JJK style): the name sits inside a wavy energy mass with tapered tongues rising off it, with a translucent
+// a translucent cyan body, a bright inner rim and a black brush-ink outline. Scrolling noise keeps the edge alive.
+// SVG filters + CSS only, so it renders inside <img> on github.com.
 const fs = require("fs");
 const W = 1200, H = 300;
 const T = {
   dark: {
-    bg0: "#010409", bg1: "#03101A", text: "#F2FEFF", textGlow: "#7FF0FF",
-    // heat ramp per channel, indexed by flame intensity
-    r: "0 0.01 0.02 0.06 0.3 0.68", g: "0 0.16 0.33 0.6 0.86 0.97", b: "0 0.24 0.48 0.78 0.96 1", a: "0 0 0.12 0.6 0.95 1",
-    smoke: "#0B4E62", ember: "#BDF8FF", smokeOp: 0.45, glowOp: 0.45,
+    bg0: "#03080C", bg1: "#071820", text: "#F2FEFF", ink: "#010406",
+    body: "#1FC4D6", bodyOp: 0.18, rim: "#6FF5F7", glow: "#2CC9E0", glowOp: 0.75,
   },
   light: {
-    bg0: "#F5FBFD", bg1: "#DDEFF5", text: "#03222B", textGlow: "#1592AE",
-    r: "0.7 0.5 0.25 0.12 0.05 0.04", g: "0.9 0.84 0.72 0.6 0.5 0.45", b: "0.94 0.9 0.82 0.74 0.62 0.56", a: "0 0 0.1 0.5 0.8 0.9",
-    smoke: "#8ACCDB", ember: "#0B7A93", smokeOp: 0.45, glowOp: 0.25,
+    bg0: "#F3F9FB", bg1: "#E0EEF2", text: "#03222B", ink: "#06141A",
+    body: "#1FC4D6", bodyOp: 0.2, rim: "#2BD9E6", glow: "#1FB6D5", glowOp: 0.3,
   },
 };
 const font = `font-family="'Segoe UI Black','Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900"`;
-const name = (attrs) => `<text x="600" y="232" text-anchor="middle" ${font} font-size="72" letter-spacing="6" ${attrs}>MEHMET ANIL ÜLKÜ</text>`;
+const name = (attrs) => `<text x="600" y="238" text-anchor="middle" ${font} font-size="70" letter-spacing="6" ${attrs}>MEHMET ANIL ÜLKÜ</text>`;
 
 // A seamless noise tile (stitchTiles) exposed as white with alpha = noise
 const noise = (id, freq, oct, seed) => `
     <filter id="${id}" x="0" y="0" width="100%" height="100%" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB">
       <feTurbulence type="fractalNoise" baseFrequency="${freq}" numOctaves="${oct}" seed="${seed}" stitchTiles="stitch"/>
-      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  1.6 0 0 0 -0.35"/>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  1.8 0 0 0 -0.4"/>
     </filter>
     <pattern id="${id}-p" width="${W}" height="${H}" patternUnits="userSpaceOnUse"><rect width="${W}" height="${H}" filter="url(#${id})"/></pattern>`;
 
+// Tongue: a centreline S-curve from the base up to the tip, thickness tapering to zero
+function tongue(x, base, h, w, bend, curl) {
+  const n = 28, L = [], R = [];
+  for (let i = 0; i <= n; i++) {
+    const t = i / n, y = base - h * t;
+    const cx = x + bend * Math.sin(t * Math.PI * 0.9) + curl * t * t * t;
+    const half = (w / 2) * Math.pow(1 - t, 1.6) + (i === n ? 0 : 0.6);
+    L.push([cx - half, y]); R.push([cx + half, y]);
+  }
+  const pts = L.concat(R.reverse()).map(([a, b]) => a.toFixed(1) + " " + b.toFixed(1));
+  return "M" + pts.join(" L") + "Z";
+}
+const TONGUES = [
+  // x, base, height, width, bend, curl, sway seconds — uneven on purpose, with one hero tongue and two thin wisps
+  [250, 200, 70, 60, 10, 18, 3.3], [345, 182, 150, 84, -26, 40, 4.2], [470, 180, 95, 64, 22, -30, 3.6],
+  [522, 172, 122, 30, 18, -22, 3.1], [592, 178, 160, 100, -30, 46, 4.8], [705, 180, 118, 74, 26, -38, 3.9],
+  [808, 182, 150, 90, -24, 42, 4.4], [862, 176, 108, 28, -16, 24, 3.0], [928, 195, 82, 62, 16, -26, 3.5],
+];
+
 function banner(k) {
   const c = T[k];
-  const embers = Array.from({ length: 16 }, (_, i) => {
-    const x = 190 + ((i * 197) % 820), d = 3 + (i % 5) * 0.9, r = 1.2 + (i % 3) * 0.7;
-    return `<circle class="em" cx="${x}" cy="160" r="${r}" style="animation-duration:${d}s;animation-delay:-${(i * 0.73) % d}s;--dx:${(i % 2 ? 1 : -1) * (8 + (i % 4) * 6)}px"/>`;
-  }).join("");
+  const tongues = TONGUES.map(([x, b, h, w, bend, curl, d], i) =>
+    `<g class="tg" style="transform-origin:${x}px ${b}px;animation-duration:${d}s;animation-delay:-${(i * 0.9) % d}s"><path d="${tongue(x, b, h, w, bend, curl)}" fill="#fff"/></g>`).join("\n      ");
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">
   <title>Mehmet Anıl ÜLKÜ</title>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c.bg0}"/><stop offset="1" stop-color="${c.bg1}"/></linearGradient>
-    ${noise("n1", "0.022 0.009", 4, 4)}
-    ${noise("n2", "0.05 0.02", 3, 9)}
-    <!-- aura envelope: glyphs swollen and smeared upward, rising from just above the letters -->
-    <filter id="env" x="-10%" y="-200%" width="120%" height="320%" color-interpolation-filters="sRGB">
-      <feMorphology in="SourceAlpha" operator="dilate" radius="3" result="d"/>
-      <feGaussianBlur in="d" stdDeviation="8 20" result="b0"/>
-      <feOffset in="b0" dy="-26" result="b0u"/>
-      <feGaussianBlur in="d" stdDeviation="10 40" result="b1"/>
-      <feOffset in="b1" dy="-50" result="b1u"/>
-      <feGaussianBlur in="d" stdDeviation="14 60" result="b2"/>
-      <feOffset in="b2" dy="-95" result="b2u"/>
-      <feMerge result="m"><feMergeNode in="b2u"/><feMergeNode in="b1u"/><feMergeNode in="b0u"/></feMerge>
-      <feTurbulence type="fractalNoise" baseFrequency="0.035 0.003" numOctaves="2" seed="13" result="cols"/>
-      <feComponentTransfer in="cols" result="colsK"><feFuncA type="linear" slope="2.6" intercept="-0.7"/></feComponentTransfer>
-      <feComposite in="m" in2="colsK" operator="arithmetic" k1="1.6" k2="0.45" result="mc"/>
-      <feColorMatrix in="mc" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.4 0"/>
+    ${noise("n1", "0.006 0.009", 3, 4)}
+    <!-- soft blob around the name, a little taller on top so lobes rise -->
+    <filter id="env" x="-25%" y="-300%" width="150%" height="700%" color-interpolation-filters="sRGB">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="30" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="30 26" result="b0"/>
+      <feGaussianBlur in="d" stdDeviation="34 34" result="b1"/>
+      <feOffset in="b1" dy="-18" result="b1u"/>
+      <feMerge><feMergeNode in="b1u"/><feMergeNode in="b0"/></feMerge>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.3 0"/>
     </filter>
-    <mask id="aura" maskUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${H}">${name('fill="#fff" filter="url(#env)"')}</mask>
-    <!-- intensity -> heat ramp; slight wobble so tongues lick sideways -->
-    <filter id="heat" x="0" y="0" width="100%" height="100%" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="2" result="w"/>
+    <filter id="core" x="-10%" y="-100%" width="120%" height="300%">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="26" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="8"/>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 3 0"/>
+    </filter>
+    <filter id="wide" x="-30%" y="-400%" width="160%" height="900%">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="40" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="50 70"/>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 2 0"/>
+    </filter>
+    <mask id="near" maskUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${H}">${name('fill="#fff" filter="url(#wide)"')}</mask>
+    <!-- intensity -> hard shape -> translucent body, glowing inner rim, brush-ink outline -->
+    <filter id="ink" x="0" y="0" width="${W}" height="${H}" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.006 0.009" numOctaves="2" seed="8" result="w"/>
       <feDisplacementMap in="SourceGraphic" in2="w" scale="22" xChannelSelector="R" yChannelSelector="G" result="s"/>
-      <feColorMatrix in="s" values="0 0 0 1 0  0 0 0 1 0  0 0 0 1 0  0 0 0 0 1" result="i"/>
-      <feComponentTransfer in="i" result="rgb">
-        <feFuncR type="table" tableValues="${c.r}"/><feFuncG type="table" tableValues="${c.g}"/><feFuncB type="table" tableValues="${c.b}"/>
-      </feComponentTransfer>
-      <feComponentTransfer in="s" result="a"><feFuncA type="table" tableValues="${c.a}"/></feComponentTransfer>
-      <feComposite in="rgb" in2="a" operator="in" result="col"/>
-      <feGaussianBlur in="col" stdDeviation="8" result="glow"/>
-      <feMerge><feMergeNode in="glow"/><feMergeNode in="col"/></feMerge>
+      <feGaussianBlur in="s" stdDeviation="1.5" result="sb"/>
+      <feComponentTransfer in="sb" result="A"><feFuncA type="linear" slope="16" intercept="-8.6"/></feComponentTransfer>
+      <feMorphology in="A" operator="erode" radius="9" result="Ae"/>
+      <feGaussianBlur in="Ae" stdDeviation="16" result="Aeb"/>
+      <feComposite in="A" in2="Aeb" operator="out" result="rimA"/>
+      <feFlood flood-color="${c.body}" flood-opacity="${c.bodyOp}"/>
+      <feComposite in2="A" operator="in" result="fill"/>
+      <feFlood flood-color="${c.rim}" flood-opacity=".85"/>
+      <feComposite in2="rimA" operator="in" result="rim"/>
+      <!-- brush outline: dilated shape roughened by fine noise, minus the body -->
+      <feMorphology in="A" operator="dilate" radius="9" result="Ad"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="2" seed="31" result="tn"/>
+      <feDisplacementMap in="Ad" in2="tn" scale="16" xChannelSelector="B" yChannelSelector="R" result="Adt"/>
+      <feComposite in="Adt" in2="A" operator="arithmetic" k2="1" k3="1" result="Adu"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.03 0.05" numOctaves="2" seed="21" result="fn"/>
+      <feDisplacementMap in="Adu" in2="fn" scale="12" xChannelSelector="R" yChannelSelector="G" result="Adr0"/>
+      <feGaussianBlur in="Adr0" stdDeviation="1"/>
+      <feComponentTransfer result="Adr"><feFuncA type="linear" slope="6" intercept="-2.5"/></feComponentTransfer>
+      <feComposite in="Adr" in2="A" operator="out" result="ringA"/>
+      <feFlood flood-color="${c.ink}"/>
+      <feComposite in2="ringA" operator="in" result="ring"/>
+      <feGaussianBlur in="Adr" stdDeviation="10" result="og"/>
+      <feFlood flood-color="${c.glow}" flood-opacity="${c.glowOp}"/>
+      <feComposite in2="og" operator="in" result="og2"/>
+      <feComposite in="og2" in2="Adr" operator="out" result="outer"/>
+      <feMerge><feMergeNode in="outer"/><feMergeNode in="fill"/><feMergeNode in="rim"/><feMergeNode in="ring"/></feMerge>
     </filter>
-    <filter id="smoke" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
-      <feComponentTransfer><feFuncA type="table" tableValues="0 0 0.2 0.6 1"/></feComponentTransfer>
-      <feColorMatrix values="0 0 0 0 ${parseInt(c.smoke.slice(1, 3), 16) / 255}  0 0 0 0 ${parseInt(c.smoke.slice(3, 5), 16) / 255}  0 0 0 0 ${parseInt(c.smoke.slice(5, 7), 16) / 255}  0 0 0 1 0"/>
-    </filter>
-    <linearGradient id="lowG" x1="0" y1="0" x2="0" y2="1"><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff"/></linearGradient>
-    <mask id="low"><rect width="${W}" height="${H}" fill="url(#lowG)"/></mask>
-    <filter id="moat" x="-5%" y="-80%" width="110%" height="260%">
-      <feMorphology in="SourceAlpha" operator="dilate" radius="5" result="d"/>
-      <feGaussianBlur in="d" stdDeviation="7 16" result="soft"/>
-      <feGaussianBlur in="d" stdDeviation="2" result="hard"/>
-      <feMerge result="m"><feMergeNode in="soft"/><feMergeNode in="soft"/><feMergeNode in="hard"/></feMerge>
-      <feTurbulence type="fractalNoise" baseFrequency="0.045 0.02" numOctaves="2" seed="17" result="rag"/>
-      <feDisplacementMap in="m" in2="rag" scale="26" xChannelSelector="R" yChannelSelector="G" result="mr"/>
-      <feMerge><feMergeNode in="mr"/><feMergeNode in="hard"/></feMerge>
-    </filter>
-    <mask id="clear" maskUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="#fff"/>${name('fill="#000" filter="url(#moat)"')}</mask>
-    <filter id="eglow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="1.6" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    <filter id="tglow" x="-5%" y="-50%" width="110%" height="200%"><feGaussianBlur stdDeviation="2.5"/></filter>
+    <filter id="tglow" x="-5%" y="-50%" width="110%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
     <clipPath id="clip"><rect width="${W}" height="${H}" rx="18"/></clipPath>
   </defs>
   <style>
-    .up1{animation:up 5.5s linear infinite}
-    .up2{animation:up 2.6s linear infinite}
-    .up3{animation:up 16s linear infinite}
+    .up{animation:up 9s linear infinite}
+    .tg{animation:sway ease-in-out infinite alternate}
+    @keyframes sway{from{transform:rotate(-4deg) scaleY(.9)}to{transform:rotate(4deg) scaleY(1.06)}}
     @keyframes up{from{transform:translateY(0)}to{transform:translateY(-${H}px)}}
-    .em{fill:${c.ember};filter:url(#eglow);animation:rise linear infinite;opacity:0}
-    @keyframes rise{0%{transform:translate(0,0);opacity:0}15%{opacity:1}100%{transform:translate(var(--dx),-170px);opacity:0}}
-    @media (prefers-reduced-motion:reduce){.up1,.up2,.up3,.em{animation:none}}
+    @media (prefers-reduced-motion:reduce){.up,.tg{animation:none}}
   </style>
   <g clip-path="url(#clip)">
     <rect width="${W}" height="${H}" fill="url(#bg)"/>
-    <g mask="url(#clear)">
-    <g mask="url(#low)" opacity="${c.smokeOp}"><g filter="url(#smoke)"><rect class="up3" width="${W}" height="${H * 2}" fill="url(#n1-p)"/></g></g>
-    <g filter="url(#heat)">
-      <g mask="url(#aura)">
-        <rect class="up1" width="${W}" height="${H * 2}" fill="url(#n1-p)"/>
-        <rect class="up2" width="${W}" height="${H * 2}" fill="url(#n2-p)" opacity=".7"/>
-      </g>
+    <g filter="url(#ink)">
+      ${name('fill="#fff" filter="url(#core)"')}
+      ${name('fill="#fff" filter="url(#env)" opacity=".5"')}
+      ${tongues}
+      <g mask="url(#near)" opacity=".55"><rect class="up" width="${W}" height="${H * 2}" fill="url(#n1-p)"/></g>
     </g>
-    ${embers}
-    </g>
-    ${name(`fill="${c.textGlow}" filter="url(#tglow)" opacity="${c.glowOp}"`)}
+    ${name(`fill="${c.rim}" filter="url(#tglow)" opacity=".35"`)}
     ${name(`fill="${c.text}"`)}
   </g>
 </svg>

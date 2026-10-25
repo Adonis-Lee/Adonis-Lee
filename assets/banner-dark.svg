@@ -1,90 +1,91 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
   <title>Mehmet Anıl ÜLKÜ</title>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#010409"/><stop offset="1" stop-color="#03101A"/></linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#03080C"/><stop offset="1" stop-color="#071820"/></linearGradient>
     
     <filter id="n1" x="0" y="0" width="100%" height="100%" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB">
-      <feTurbulence type="fractalNoise" baseFrequency="0.022 0.009" numOctaves="4" seed="4" stitchTiles="stitch"/>
-      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  1.6 0 0 0 -0.35"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.006 0.009" numOctaves="3" seed="4" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  1.8 0 0 0 -0.4"/>
     </filter>
     <pattern id="n1-p" width="1200" height="300" patternUnits="userSpaceOnUse"><rect width="1200" height="300" filter="url(#n1)"/></pattern>
-    
-    <filter id="n2" x="0" y="0" width="100%" height="100%" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB">
-      <feTurbulence type="fractalNoise" baseFrequency="0.05 0.02" numOctaves="3" seed="9" stitchTiles="stitch"/>
-      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  1.6 0 0 0 -0.35"/>
+    <!-- soft blob around the name, a little taller on top so lobes rise -->
+    <filter id="env" x="-25%" y="-300%" width="150%" height="700%" color-interpolation-filters="sRGB">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="30" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="30 26" result="b0"/>
+      <feGaussianBlur in="d" stdDeviation="34 34" result="b1"/>
+      <feOffset in="b1" dy="-18" result="b1u"/>
+      <feMerge><feMergeNode in="b1u"/><feMergeNode in="b0"/></feMerge>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.3 0"/>
     </filter>
-    <pattern id="n2-p" width="1200" height="300" patternUnits="userSpaceOnUse"><rect width="1200" height="300" filter="url(#n2)"/></pattern>
-    <!-- aura envelope: glyphs swollen and smeared upward, rising from just above the letters -->
-    <filter id="env" x="-10%" y="-200%" width="120%" height="320%" color-interpolation-filters="sRGB">
-      <feMorphology in="SourceAlpha" operator="dilate" radius="3" result="d"/>
-      <feGaussianBlur in="d" stdDeviation="8 20" result="b0"/>
-      <feOffset in="b0" dy="-26" result="b0u"/>
-      <feGaussianBlur in="d" stdDeviation="10 40" result="b1"/>
-      <feOffset in="b1" dy="-50" result="b1u"/>
-      <feGaussianBlur in="d" stdDeviation="14 60" result="b2"/>
-      <feOffset in="b2" dy="-95" result="b2u"/>
-      <feMerge result="m"><feMergeNode in="b2u"/><feMergeNode in="b1u"/><feMergeNode in="b0u"/></feMerge>
-      <feTurbulence type="fractalNoise" baseFrequency="0.035 0.003" numOctaves="2" seed="13" result="cols"/>
-      <feComponentTransfer in="cols" result="colsK"><feFuncA type="linear" slope="2.6" intercept="-0.7"/></feComponentTransfer>
-      <feComposite in="m" in2="colsK" operator="arithmetic" k1="1.6" k2="0.45" result="mc"/>
-      <feColorMatrix in="mc" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.4 0"/>
+    <filter id="core" x="-10%" y="-100%" width="120%" height="300%">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="26" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="8"/>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 3 0"/>
     </filter>
-    <mask id="aura" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="300"><text x="600" y="232" text-anchor="middle" font-family="'Segoe UI Black','Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="72" letter-spacing="6" fill="#fff" filter="url(#env)">MEHMET ANIL ÜLKÜ</text></mask>
-    <!-- intensity -> heat ramp; slight wobble so tongues lick sideways -->
-    <filter id="heat" x="0" y="0" width="100%" height="100%" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="2" result="w"/>
+    <filter id="wide" x="-30%" y="-400%" width="160%" height="900%">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="40" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="50 70"/>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 2 0"/>
+    </filter>
+    <mask id="near" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="300"><text x="600" y="238" text-anchor="middle" font-family="'Segoe UI Black','Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="70" letter-spacing="6" fill="#fff" filter="url(#wide)">MEHMET ANIL ÜLKÜ</text></mask>
+    <!-- intensity -> hard shape -> translucent body, glowing inner rim, brush-ink outline -->
+    <filter id="ink" x="0" y="0" width="1200" height="300" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.006 0.009" numOctaves="2" seed="8" result="w"/>
       <feDisplacementMap in="SourceGraphic" in2="w" scale="22" xChannelSelector="R" yChannelSelector="G" result="s"/>
-      <feColorMatrix in="s" values="0 0 0 1 0  0 0 0 1 0  0 0 0 1 0  0 0 0 0 1" result="i"/>
-      <feComponentTransfer in="i" result="rgb">
-        <feFuncR type="table" tableValues="0 0.01 0.02 0.06 0.3 0.68"/><feFuncG type="table" tableValues="0 0.16 0.33 0.6 0.86 0.97"/><feFuncB type="table" tableValues="0 0.24 0.48 0.78 0.96 1"/>
-      </feComponentTransfer>
-      <feComponentTransfer in="s" result="a"><feFuncA type="table" tableValues="0 0 0.12 0.6 0.95 1"/></feComponentTransfer>
-      <feComposite in="rgb" in2="a" operator="in" result="col"/>
-      <feGaussianBlur in="col" stdDeviation="8" result="glow"/>
-      <feMerge><feMergeNode in="glow"/><feMergeNode in="col"/></feMerge>
+      <feGaussianBlur in="s" stdDeviation="1.5" result="sb"/>
+      <feComponentTransfer in="sb" result="A"><feFuncA type="linear" slope="16" intercept="-8.6"/></feComponentTransfer>
+      <feMorphology in="A" operator="erode" radius="9" result="Ae"/>
+      <feGaussianBlur in="Ae" stdDeviation="16" result="Aeb"/>
+      <feComposite in="A" in2="Aeb" operator="out" result="rimA"/>
+      <feFlood flood-color="#1FC4D6" flood-opacity="0.18"/>
+      <feComposite in2="A" operator="in" result="fill"/>
+      <feFlood flood-color="#6FF5F7" flood-opacity=".85"/>
+      <feComposite in2="rimA" operator="in" result="rim"/>
+      <!-- brush outline: dilated shape roughened by fine noise, minus the body -->
+      <feMorphology in="A" operator="dilate" radius="9" result="Ad"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="2" seed="31" result="tn"/>
+      <feDisplacementMap in="Ad" in2="tn" scale="16" xChannelSelector="B" yChannelSelector="R" result="Adt"/>
+      <feComposite in="Adt" in2="A" operator="arithmetic" k2="1" k3="1" result="Adu"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.03 0.05" numOctaves="2" seed="21" result="fn"/>
+      <feDisplacementMap in="Adu" in2="fn" scale="12" xChannelSelector="R" yChannelSelector="G" result="Adr0"/>
+      <feGaussianBlur in="Adr0" stdDeviation="1"/>
+      <feComponentTransfer result="Adr"><feFuncA type="linear" slope="6" intercept="-2.5"/></feComponentTransfer>
+      <feComposite in="Adr" in2="A" operator="out" result="ringA"/>
+      <feFlood flood-color="#010406"/>
+      <feComposite in2="ringA" operator="in" result="ring"/>
+      <feGaussianBlur in="Adr" stdDeviation="10" result="og"/>
+      <feFlood flood-color="#2CC9E0" flood-opacity="0.75"/>
+      <feComposite in2="og" operator="in" result="og2"/>
+      <feComposite in="og2" in2="Adr" operator="out" result="outer"/>
+      <feMerge><feMergeNode in="outer"/><feMergeNode in="fill"/><feMergeNode in="rim"/><feMergeNode in="ring"/></feMerge>
     </filter>
-    <filter id="smoke" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
-      <feComponentTransfer><feFuncA type="table" tableValues="0 0 0.2 0.6 1"/></feComponentTransfer>
-      <feColorMatrix values="0 0 0 0 0.043137254901960784  0 0 0 0 0.3058823529411765  0 0 0 0 0.3843137254901961  0 0 0 1 0"/>
-    </filter>
-    <linearGradient id="lowG" x1="0" y1="0" x2="0" y2="1"><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff"/></linearGradient>
-    <mask id="low"><rect width="1200" height="300" fill="url(#lowG)"/></mask>
-    <filter id="moat" x="-5%" y="-80%" width="110%" height="260%">
-      <feMorphology in="SourceAlpha" operator="dilate" radius="5" result="d"/>
-      <feGaussianBlur in="d" stdDeviation="7 16" result="soft"/>
-      <feGaussianBlur in="d" stdDeviation="2" result="hard"/>
-      <feMerge result="m"><feMergeNode in="soft"/><feMergeNode in="soft"/><feMergeNode in="hard"/></feMerge>
-      <feTurbulence type="fractalNoise" baseFrequency="0.045 0.02" numOctaves="2" seed="17" result="rag"/>
-      <feDisplacementMap in="m" in2="rag" scale="26" xChannelSelector="R" yChannelSelector="G" result="mr"/>
-      <feMerge><feMergeNode in="mr"/><feMergeNode in="hard"/></feMerge>
-    </filter>
-    <mask id="clear" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="300"><rect width="1200" height="300" fill="#fff"/><text x="600" y="232" text-anchor="middle" font-family="'Segoe UI Black','Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="72" letter-spacing="6" fill="#000" filter="url(#moat)">MEHMET ANIL ÜLKÜ</text></mask>
-    <filter id="eglow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="1.6" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    <filter id="tglow" x="-5%" y="-50%" width="110%" height="200%"><feGaussianBlur stdDeviation="2.5"/></filter>
+    <filter id="tglow" x="-5%" y="-50%" width="110%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
     <clipPath id="clip"><rect width="1200" height="300" rx="18"/></clipPath>
   </defs>
   <style>
-    .up1{animation:up 5.5s linear infinite}
-    .up2{animation:up 2.6s linear infinite}
-    .up3{animation:up 16s linear infinite}
+    .up{animation:up 9s linear infinite}
+    .tg{animation:sway ease-in-out infinite alternate}
+    @keyframes sway{from{transform:rotate(-4deg) scaleY(.9)}to{transform:rotate(4deg) scaleY(1.06)}}
     @keyframes up{from{transform:translateY(0)}to{transform:translateY(-300px)}}
-    .em{fill:#BDF8FF;filter:url(#eglow);animation:rise linear infinite;opacity:0}
-    @keyframes rise{0%{transform:translate(0,0);opacity:0}15%{opacity:1}100%{transform:translate(var(--dx),-170px);opacity:0}}
-    @media (prefers-reduced-motion:reduce){.up1,.up2,.up3,.em{animation:none}}
+    @media (prefers-reduced-motion:reduce){.up,.tg{animation:none}}
   </style>
   <g clip-path="url(#clip)">
     <rect width="1200" height="300" fill="url(#bg)"/>
-    <g mask="url(#clear)">
-    <g mask="url(#low)" opacity="0.45"><g filter="url(#smoke)"><rect class="up3" width="1200" height="600" fill="url(#n1-p)"/></g></g>
-    <g filter="url(#heat)">
-      <g mask="url(#aura)">
-        <rect class="up1" width="1200" height="600" fill="url(#n1-p)"/>
-        <rect class="up2" width="1200" height="600" fill="url(#n2-p)" opacity=".7"/>
-      </g>
+    <g filter="url(#ink)">
+      <text x="600" y="238" text-anchor="middle" font-family="'Segoe UI Black','Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="70" letter-spacing="6" fill="#fff" filter="url(#core)">MEHMET ANIL ÜLKÜ</text>
+      <text x="600" y="238" text-anchor="middle" font-family="'Segoe UI Black','Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="70" letter-spacing="6" fill="#fff" filter="url(#env)" opacity=".5">MEHMET ANIL ÜLKÜ</text>
+      <g class="tg" style="transform-origin:250px 200px;animation-duration:3.3s;animation-delay:-0s"><path d="M219.4 200.0 L222.1 197.5 L224.8 195.0 L227.4 192.5 L229.9 190.0 L232.4 187.5 L234.9 185.0 L237.2 182.5 L239.5 180.0 L241.8 177.5 L243.9 175.0 L246.0 172.5 L247.9 170.0 L249.8 167.5 L251.6 165.0 L253.4 162.5 L255.0 160.0 L256.6 157.5 L258.1 155.0 L259.5 152.5 L260.9 150.0 L262.3 147.5 L263.5 145.0 L264.8 142.5 L266.0 140.0 L267.2 137.5 L268.3 135.0 L269.4 132.5 L271.1 130.0 L271.1 130.0 L270.9 132.5 L270.4 135.0 L270.0 137.5 L269.8 140.0 L269.8 142.5 L269.8 145.0 L270.0 147.5 L270.2 150.0 L270.5 152.5 L270.9 155.0 L271.3 157.5 L271.7 160.0 L272.1 162.5 L272.6 165.0 L273.1 167.5 L273.6 170.0 L274.2 172.5 L274.7 175.0 L275.2 177.5 L275.8 180.0 L276.3 182.5 L276.9 185.0 L277.4 187.5 L278.0 190.0 L278.6 192.5 L279.3 195.0 L279.9 197.5 L280.6 200.0Z" fill="#fff"/></g>
+      <g class="tg" style="transform-origin:345px 182px;animation-duration:4.2s;animation-delay:-0.9s"><path d="M302.4 182.0 L302.2 176.6 L301.9 171.3 L301.7 165.9 L301.5 160.6 L301.4 155.2 L301.4 149.9 L301.6 144.5 L302.0 139.1 L302.6 133.8 L303.5 128.4 L304.6 123.1 L306.1 117.7 L307.8 112.4 L309.9 107.0 L312.3 101.6 L315.1 96.3 L318.2 90.9 L321.7 85.6 L325.6 80.2 L329.9 74.9 L334.5 69.5 L339.5 64.1 L344.9 58.8 L350.6 53.4 L356.6 48.1 L363.0 42.7 L369.6 37.4 L377.0 32.0 L377.0 32.0 L371.2 37.4 L365.4 42.7 L360.2 48.1 L355.5 53.4 L351.4 58.8 L347.9 64.1 L344.9 69.5 L342.4 74.9 L340.5 80.2 L339.1 85.6 L338.2 90.9 L337.9 96.3 L338.1 101.6 L338.8 107.0 L339.9 112.4 L341.6 117.7 L343.6 123.1 L346.1 128.4 L349.0 133.8 L352.3 139.1 L355.8 144.5 L359.7 149.9 L363.9 155.2 L368.3 160.6 L372.9 165.9 L377.7 171.3 L382.6 176.6 L387.6 182.0Z" fill="#fff"/></g>
+      <g class="tg" style="transform-origin:470px 180px;animation-duration:3.6s;animation-delay:-1.8s"><path d="M437.4 180.0 L441.4 176.6 L445.4 173.2 L449.2 169.8 L453.0 166.4 L456.5 163.0 L459.9 159.6 L463.0 156.3 L465.9 152.9 L468.5 149.5 L470.9 146.1 L472.9 142.7 L474.6 139.3 L475.9 135.9 L476.8 132.5 L477.4 129.1 L477.5 125.7 L477.3 122.3 L476.6 118.9 L475.5 115.5 L474.0 112.1 L472.0 108.8 L469.6 105.4 L466.8 102.0 L463.6 98.6 L459.9 95.2 L455.8 91.8 L451.2 88.4 L446.8 85.0 L446.8 85.0 L452.7 88.4 L457.9 91.8 L462.9 95.2 L467.6 98.6 L472.1 102.0 L476.3 105.4 L480.2 108.8 L483.8 112.1 L487.1 115.5 L490.1 118.9 L492.8 122.3 L495.2 125.7 L497.3 129.1 L499.1 132.5 L500.7 135.9 L501.9 139.3 L502.9 142.7 L503.6 146.1 L504.2 149.5 L504.5 152.9 L504.6 156.3 L504.6 159.6 L504.4 163.0 L504.2 166.4 L503.8 169.8 L503.4 173.2 L503.0 176.6 L502.6 180.0Z" fill="#fff"/></g>
+      <g class="tg" style="transform-origin:522px 172px;animation-duration:3.1s;animation-delay:-2.7s"><path d="M506.4 172.0 L509.1 167.6 L511.7 163.3 L514.2 158.9 L516.7 154.6 L519.0 150.2 L521.2 145.9 L523.3 141.5 L525.1 137.1 L526.8 132.8 L528.2 128.4 L529.4 124.1 L530.4 119.7 L531.1 115.4 L531.5 111.0 L531.6 106.6 L531.4 102.3 L530.9 97.9 L530.1 93.6 L529.0 89.2 L527.6 84.9 L525.8 80.5 L523.8 76.1 L521.4 71.8 L518.7 67.4 L515.7 63.1 L512.4 58.7 L508.9 54.4 L505.6 50.0 L505.6 50.0 L510.2 54.4 L514.1 58.7 L517.8 63.1 L521.3 67.4 L524.5 71.8 L527.5 76.1 L530.3 80.5 L532.8 84.9 L535.1 89.2 L537.1 93.6 L538.8 97.9 L540.3 102.3 L541.6 106.6 L542.6 111.0 L543.3 115.4 L543.8 119.7 L544.1 124.1 L544.2 128.4 L544.1 132.8 L543.9 137.1 L543.4 141.5 L542.8 145.9 L542.1 150.2 L541.3 154.6 L540.5 158.9 L539.5 163.3 L538.6 167.6 L537.6 172.0Z" fill="#fff"/></g>
+      <g class="tg" style="transform-origin:592px 178px;animation-duration:4.8s;animation-delay:-3.6s"><path d="M541.4 178.0 L541.2 172.3 L541.0 166.6 L540.8 160.9 L540.7 155.1 L540.7 149.4 L540.8 143.7 L541.1 138.0 L541.6 132.3 L542.4 126.6 L543.4 120.9 L544.8 115.1 L546.5 109.4 L548.6 103.7 L551.0 98.0 L553.9 92.3 L557.1 86.6 L560.8 80.9 L564.9 75.1 L569.4 69.4 L574.4 63.7 L579.8 58.0 L585.6 52.3 L591.8 46.6 L598.4 40.9 L605.4 35.1 L612.7 29.4 L620.3 23.7 L628.7 18.0 L628.7 18.0 L622.0 23.7 L615.4 29.4 L609.4 35.1 L604.1 40.9 L599.4 46.6 L595.3 52.3 L591.9 58.0 L589.1 63.7 L586.9 69.4 L585.4 75.1 L584.4 80.9 L584.1 86.6 L584.4 92.3 L585.2 98.0 L586.6 103.7 L588.6 109.4 L591.0 115.1 L594.0 120.9 L597.4 126.6 L601.2 132.3 L605.4 138.0 L610.0 143.7 L614.8 149.4 L620.0 155.1 L625.4 160.9 L631.0 166.6 L636.8 172.3 L642.6 178.0Z" fill="#fff"/></g>
+      <g class="tg" style="transform-origin:705px 180px;animation-duration:3.9s;animation-delay:-0.6000000000000001s"><path d="M667.4 180.0 L672.1 175.8 L676.7 171.6 L681.2 167.4 L685.6 163.1 L689.8 158.9 L693.7 154.7 L697.3 150.5 L700.7 146.3 L703.8 142.1 L706.4 137.9 L708.7 133.6 L710.6 129.4 L712.1 125.2 L713.1 121.0 L713.7 116.8 L713.7 112.6 L713.3 108.4 L712.4 104.1 L711.0 99.9 L709.0 95.7 L706.5 91.5 L703.5 87.3 L700.0 83.1 L695.9 78.9 L691.4 74.6 L686.3 70.4 L680.6 66.2 L675.0 62.0 L675.0 62.0 L682.2 66.2 L688.5 70.4 L694.6 74.6 L700.4 78.9 L705.9 83.1 L711.0 87.3 L715.8 91.5 L720.2 95.7 L724.2 99.9 L727.8 104.1 L731.1 108.4 L734.0 112.6 L736.6 116.8 L738.7 121.0 L740.6 125.2 L742.1 129.4 L743.2 133.6 L744.1 137.9 L744.7 142.1 L745.1 146.3 L745.2 150.5 L745.2 154.7 L745.0 158.9 L744.6 163.1 L744.2 167.4 L743.7 171.6 L743.1 175.8 L742.6 180.0Z" fill="#fff"/></g>
+      <g class="tg" style="transform-origin:808px 182px;animation-duration:4.4s;animation-delay:-1s"><path d="M762.4 182.0 L762.5 176.6 L762.6 171.3 L762.8 165.9 L762.9 160.6 L763.2 155.2 L763.6 149.9 L764.1 144.5 L764.8 139.1 L765.7 133.8 L766.8 128.4 L768.2 123.1 L769.9 117.7 L771.8 112.4 L774.1 107.0 L776.7 101.6 L779.7 96.3 L783.0 90.9 L786.6 85.6 L790.6 80.2 L795.0 74.9 L799.8 69.5 L804.9 64.1 L810.3 58.8 L816.1 53.4 L822.1 48.1 L828.5 42.7 L835.2 37.4 L842.6 32.0 L842.6 32.0 L836.8 37.4 L831.0 42.7 L825.9 48.1 L821.3 53.4 L817.2 58.8 L813.7 64.1 L810.8 69.5 L808.3 74.9 L806.5 80.2 L805.2 85.6 L804.3 90.9 L804.1 96.3 L804.3 101.6 L805.0 107.0 L806.2 112.4 L807.8 117.7 L809.9 123.1 L812.4 128.4 L815.3 133.8 L818.5 139.1 L822.1 144.5 L825.9 149.9 L830.1 155.2 L834.5 160.6 L839.0 165.9 L843.8 171.3 L848.6 176.6 L853.6 182.0Z" fill="#fff"/></g>
+      <g class="tg" style="transform-origin:862px 176px;animation-duration:3s;animation-delay:-0.2999999999999998s"><path d="M847.4 176.0 L846.6 172.1 L845.8 168.3 L845.0 164.4 L844.2 160.6 L843.6 156.7 L843.0 152.9 L842.5 149.0 L842.2 145.1 L842.0 141.3 L842.0 137.4 L842.2 133.6 L842.6 129.7 L843.2 125.9 L844.0 122.0 L845.0 118.1 L846.3 114.3 L847.8 110.4 L849.6 106.6 L851.6 102.7 L853.8 98.9 L856.4 95.0 L859.1 91.1 L862.1 87.3 L865.4 83.4 L868.8 79.6 L872.5 75.7 L876.4 71.9 L881.1 68.0 L881.1 68.0 L877.7 71.9 L874.1 75.7 L870.8 79.6 L867.8 83.4 L865.1 87.3 L862.7 91.1 L860.6 95.0 L858.8 98.9 L857.3 102.7 L856.2 106.6 L855.3 110.4 L854.7 114.3 L854.4 118.1 L854.4 122.0 L854.7 125.9 L855.2 129.7 L856.0 133.6 L857.0 137.4 L858.3 141.3 L859.8 145.1 L861.4 149.0 L863.2 152.9 L865.2 156.7 L867.3 160.6 L869.5 164.4 L871.8 168.3 L874.2 172.1 L876.6 176.0Z" fill="#fff"/></g>
+      <g class="tg" style="transform-origin:928px 195px;animation-duration:3.5s;animation-delay:-0.20000000000000018s"><path d="M896.4 195.0 L899.8 192.1 L903.1 189.1 L906.3 186.2 L909.4 183.3 L912.4 180.4 L915.2 177.4 L917.8 174.5 L920.3 171.6 L922.5 168.6 L924.5 165.7 L926.2 162.8 L927.7 159.9 L928.8 156.9 L929.7 154.0 L930.3 151.1 L930.5 148.1 L930.5 145.2 L930.0 142.3 L929.3 139.4 L928.2 136.4 L926.7 133.5 L924.9 130.6 L922.7 127.6 L920.2 124.7 L917.3 121.8 L914.0 118.9 L910.4 115.9 L906.9 113.0 L906.9 113.0 L911.9 115.9 L916.1 118.9 L920.2 121.8 L924.1 124.7 L927.8 127.6 L931.4 130.6 L934.6 133.5 L937.7 136.4 L940.6 139.4 L943.2 142.3 L945.6 145.2 L947.7 148.1 L949.7 151.1 L951.4 154.0 L952.9 156.9 L954.2 159.9 L955.3 162.8 L956.3 165.7 L957.0 168.6 L957.7 171.6 L958.1 174.5 L958.5 177.4 L958.8 180.4 L959.0 183.3 L959.2 186.2 L959.3 189.1 L959.5 192.1 L959.6 195.0Z" fill="#fff"/></g>
+      <g mask="url(#near)" opacity=".55"><rect class="up" width="1200" height="600" fill="url(#n1-p)"/></g>
     </g>
-    <circle class="em" cx="190" cy="160" r="1.2" style="animation-duration:3s;animation-delay:-0s;--dx:-8px"/><circle class="em" cx="387" cy="160" r="1.9" style="animation-duration:3.9s;animation-delay:-0.73s;--dx:14px"/><circle class="em" cx="584" cy="160" r="2.5999999999999996" style="animation-duration:4.8s;animation-delay:-1.46s;--dx:-20px"/><circle class="em" cx="781" cy="160" r="1.2" style="animation-duration:5.7s;animation-delay:-2.19s;--dx:26px"/><circle class="em" cx="978" cy="160" r="1.9" style="animation-duration:6.6s;animation-delay:-2.92s;--dx:-8px"/><circle class="em" cx="355" cy="160" r="2.5999999999999996" style="animation-duration:3s;animation-delay:-0.6499999999999999s;--dx:14px"/><circle class="em" cx="552" cy="160" r="1.2" style="animation-duration:3.9s;animation-delay:-0.48s;--dx:-20px"/><circle class="em" cx="749" cy="160" r="1.9" style="animation-duration:4.8s;animation-delay:-0.3099999999999996s;--dx:26px"/><circle class="em" cx="946" cy="160" r="2.5999999999999996" style="animation-duration:5.7s;animation-delay:-0.13999999999999968s;--dx:-8px"/><circle class="em" cx="323" cy="160" r="1.2" style="animation-duration:6.6s;animation-delay:-6.57s;--dx:14px"/><circle class="em" cx="520" cy="160" r="1.9" style="animation-duration:3s;animation-delay:-1.2999999999999998s;--dx:-20px"/><circle class="em" cx="717" cy="160" r="2.5999999999999996" style="animation-duration:3.9s;animation-delay:-0.22999999999999954s;--dx:26px"/><circle class="em" cx="914" cy="160" r="1.2" style="animation-duration:4.8s;animation-delay:-3.96s;--dx:-8px"/><circle class="em" cx="291" cy="160" r="1.9" style="animation-duration:5.7s;animation-delay:-3.79s;--dx:14px"/><circle class="em" cx="488" cy="160" r="2.5999999999999996" style="animation-duration:6.6s;animation-delay:-3.619999999999999s;--dx:-20px"/><circle class="em" cx="685" cy="160" r="1.2" style="animation-duration:3s;animation-delay:-1.9499999999999993s;--dx:26px"/>
-    </g>
-    <text x="600" y="232" text-anchor="middle" font-family="'Segoe UI Black','Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="72" letter-spacing="6" fill="#7FF0FF" filter="url(#tglow)" opacity="0.45">MEHMET ANIL ÜLKÜ</text>
-    <text x="600" y="232" text-anchor="middle" font-family="'Segoe UI Black','Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="72" letter-spacing="6" fill="#F2FEFF">MEHMET ANIL ÜLKÜ</text>
+    <text x="600" y="238" text-anchor="middle" font-family="'Segoe UI Black','Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="70" letter-spacing="6" fill="#6FF5F7" filter="url(#tglow)" opacity=".35">MEHMET ANIL ÜLKÜ</text>
+    <text x="600" y="238" text-anchor="middle" font-family="'Segoe UI Black','Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="70" letter-spacing="6" fill="#F2FEFF">MEHMET ANIL ÜLKÜ</text>
   </g>
 </svg>
