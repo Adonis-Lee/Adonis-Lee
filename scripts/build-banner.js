@@ -37,8 +37,8 @@ function tongue([x, base, h, w, bend, curl], phase) {
   let tip;
   for (let i = 0; i <= n; i++) {
     const t = i / n, y = base - hh * t;
-    const cx = x + bend * (0.25 + t) * Math.sin(Math.PI * 1.6 * t - phase) + curl * t * t * t;
-    const half = (ww / 2) * Math.pow(1 - t, 1.05) * (1 - 0.25 * t);
+    const cx = x + bend * (0.3 + 1.3 * t) * Math.sin(Math.PI * 1.5 * t - phase) + curl * t * t;
+    const half = (ww / 2) * Math.pow(1 - Math.pow(t, 1.7), 0.85) * (1 - 0.3 * t);
     L.push([cx - half, y]); R.push([cx + half, y]);
     if (i === n) tip = [cx, y];
   }
@@ -56,10 +56,10 @@ function drop(cx, cy, fh, fw, lean) {
   return "M" + L.concat(R.reverse()).map(([p, q]) => p.toFixed(1) + " " + q.toFixed(1)).join(" L") + "Z";
 }
 const TONGUES = [
-  // x, base, height, width, bend, curl, seconds per cycle — uneven on purpose, one hero tongue and two thin wisps
-  [250, 200, 70, 60, 10, 18, 3.3], [345, 184, 134, 84, -20, 34, 4.2], [470, 180, 95, 64, 16, -26, 3.6],
-  [522, 172, 122, 30, 12, -18, 3.1], [592, 182, 142, 100, -22, 40, 4.8], [705, 180, 118, 74, 18, -32, 3.9],
-  [808, 184, 134, 90, -18, 36, 4.4], [862, 176, 108, 28, -12, 20, 3.0], [928, 195, 82, 62, 12, -22, 3.5],
+  // x, base, height, width, bend, curl, seconds per cycle — uneven on purpose, one hero tongue
+  [262, 204, 100, 70, 10, 18, 3.4], [372, 190, 148, 96, -16, 34, 4.3], [492, 184, 130, 80, 14, -26, 3.7],
+  [606, 188, 166, 112, -18, 38, 4.9], [724, 188, 136, 88, 15, -30, 3.9], [836, 190, 152, 94, -15, 32, 4.5],
+  [940, 204, 100, 70, 10, -18, 3.5],
 ];
 const RELEASE = 0.22; // fraction of the cycle (just before the tallest point) when the tip pinches off
 
@@ -74,7 +74,7 @@ function banner(k) {
     return `<path d="${frames[0]}" fill="#fff"><animate attributeName="d" dur="${d}s" begin="-${offs(i, d).toFixed(2)}s" repeatCount="indefinite" values="${frames.join(";")}"/></path>`;
   }).join("\n      ");
   const frags = TONGUES.map((sp, i) => {
-    const d = sp[6], tip = tongue(sp, 2 * Math.PI * RELEASE).tip, fh = 30 + sp[3] * 0.2, fw = 8 + sp[3] * 0.05;
+    const d = sp[6], tip = tongue(sp, 2 * Math.PI * RELEASE).tip, fh = 26 + sp[3] * 0.14, fw = 11 + sp[3] * 0.06;
     const dx = (sp[5] > 0 ? 1 : -1) * (6 + (i % 3) * 5);
     const path = drop(tip[0], tip[1] - fh * 0.25, fh, fw, dx * 0.6);
     if (FRAME !== null) {
@@ -141,6 +141,7 @@ function banner(k) {
       <feComposite in="og2" in2="Adr" operator="out" result="outer"/>
       <feMerge><feMergeNode in="outer"/><feMergeNode in="fill"/><feMergeNode in="rim"/><feMergeNode in="ring"/></feMerge>
     </filter>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.2"/><feComponentTransfer><feFuncA type="linear" slope="1.5"/></feComponentTransfer></filter>
     <filter id="tglow" x="-5%" y="-50%" width="110%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
     <clipPath id="clip"><rect width="${W}" height="${H}" rx="18"/></clipPath>
   </defs>
@@ -157,8 +158,10 @@ function banner(k) {
     <g filter="url(#ink)">
       ${name('fill="#fff" filter="url(#core)"')}
       ${name('fill="#fff" filter="url(#env)" opacity=".5"')}
+      <g filter="url(#soft)">
       ${tongues}
       ${frags}
+      </g>
       <g mask="url(#near)" opacity=".55"><rect class="up" width="${W}" height="${H * 2}" fill="url(#n1-p)"/></g>
     </g>
     ${name(`fill="${c.rim}" filter="url(#tglow)" opacity=".35"`)}
