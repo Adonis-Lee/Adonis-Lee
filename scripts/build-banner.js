@@ -1,6 +1,6 @@
 // Usage: node scripts/build-banner.js assets
-// Cursed-energy banner (JJK style): the name sits inside a wavy energy mass with tapered tongues rising off it, with a translucent
-// a translucent cyan body, a bright inner rim and a black brush-ink outline. Scrolling noise keeps the edge alive.
+// Cursed-energy banner (JJK style): the name sits inside a wavy energy mass with tapered tongues rising off it,
+// drawn with a translucent cyan body, a bright inner rim and a black brush-ink outline. Scrolling noise keeps the edge alive.
 // SVG filters + CSS only, so it renders inside <img> on github.com.
 const fs = require("fs");
 const W = 1200, H = 300;
