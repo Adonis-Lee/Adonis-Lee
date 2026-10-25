@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="Mehmet Anıl ÜLKÜ — Game Developer · 3D · Real-Time">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#03060A"/><stop offset="1" stop-color="#071824"/></linearGradient>
+    <radialGradient id="halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#1FA9C9" stop-opacity=".35"/><stop offset="1" stop-color="#1FA9C9" stop-opacity="0"/></radialGradient>
+    <linearGradient id="e" x1="0" x2="1"><stop offset="0" stop-color="#0E4A5E"/><stop offset=".45" stop-color="#1FA9C9"/><stop offset=".6" stop-color="#7FEBF7"/><stop offset="1" stop-color="#0E4A5E"/></linearGradient>
+    <filter id="blur" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="tg" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <clipPath id="clip"><rect width="1200" height="300" rx="18"/></clipPath>
+  </defs>
+  <style>
+    .f{fill:none;stroke-linecap:round;stroke-dasharray:240 60 40 60;animation:flow linear infinite}
+    .s{animation:twinkle ease-in-out infinite}
+    @keyframes flow{to{stroke-dashoffset:-800}}
+    @keyframes twinkle{0%,100%{opacity:.1}50%{opacity:1}}
+    @media (prefers-reduced-motion:reduce){.f,.s{animation:none}}
+  </style>
+  <g clip-path="url(#clip)">
+    <rect width="1200" height="300" fill="url(#bg)"/>
+    <ellipse cx="600" cy="150" rx="460" ry="150" fill="url(#halo)"/>
+    <g opacity="1">
+    <path d="M-40 230 C 160 120, 300 300, 470 190 S 760 60, 920 160 S 1140 250, 1260 120" stroke="url(#e)" stroke-width="12.8" opacity=".35" filter="url(#blur)" class="f" style="animation-duration:9s"/>
+    <path d="M-40 230 C 160 120, 300 300, 470 190 S 760 60, 920 160 S 1140 250, 1260 120" stroke="url(#e)" stroke-width="3.2" class="f" style="animation-duration:9s;animation-delay:-0s"/>
+    <path d="M-40 80 C 140 170, 330 20, 520 110 S 820 250, 1000 140 S 1180 40, 1260 90" stroke="url(#e)" stroke-width="9.6" opacity=".35" filter="url(#blur)" class="f" style="animation-duration:12s"/>
+    <path d="M-40 80 C 140 170, 330 20, 520 110 S 820 250, 1000 140 S 1180 40, 1260 90" stroke="url(#e)" stroke-width="2.4" class="f" style="animation-duration:12s;animation-delay:-1s"/>
+    <path d="M-40 160 C 120 60, 260 220, 420 140 S 700 20, 860 120 S 1100 230, 1260 180" stroke="url(#e)" stroke-width="6.4" opacity=".35" filter="url(#blur)" class="f" style="animation-duration:7s"/>
+    <path d="M-40 160 C 120 60, 260 220, 420 140 S 700 20, 860 120 S 1100 230, 1260 180" stroke="url(#e)" stroke-width="1.6" class="f" style="animation-duration:7s;animation-delay:-2s"/>
+    <path d="M80 300 C 160 220, 120 140, 230 90 S 330 0, 300 -20" stroke="url(#e)" stroke-width="8" opacity=".35" filter="url(#blur)" class="f" style="animation-duration:6s"/>
+    <path d="M80 300 C 160 220, 120 140, 230 90 S 330 0, 300 -20" stroke="url(#e)" stroke-width="2" class="f" style="animation-duration:6s;animation-delay:-3s"/>
+    <path d="M1120 -20 C 1040 60, 1110 140, 1010 200 S 930 290, 960 320" stroke="url(#e)" stroke-width="8" opacity=".35" filter="url(#blur)" class="f" style="animation-duration:8s"/>
+    <path d="M1120 -20 C 1040 60, 1110 140, 1010 200 S 930 290, 960 320" stroke="url(#e)" stroke-width="2" class="f" style="animation-duration:8s;animation-delay:-4s"/>
+    <path d="M-40 270 C 220 250, 380 290, 600 260 S 980 230, 1260 270" stroke="url(#e)" stroke-width="4.8" opacity=".35" filter="url(#blur)" class="f" style="animation-duration:14s"/>
+    <path d="M-40 270 C 220 250, 380 290, 600 260 S 980 230, 1260 270" stroke="url(#e)" stroke-width="1.2" class="f" style="animation-duration:14s;animation-delay:-5s"/></g>
+    <circle cx="61" cy="37" r="1" fill="#7FEBF7" style="animation-duration:3s;animation-delay:-0s" class="s"/><circle cx="218" cy="126" r="1.8" fill="#7FEBF7" style="animation-duration:4s;animation-delay:-1s" class="s"/><circle cx="375" cy="215" r="2.6" fill="#7FEBF7" style="animation-duration:5s;animation-delay:-2s" class="s"/><circle cx="532" cy="4" r="1" fill="#7FEBF7" style="animation-duration:6s;animation-delay:-3s" class="s"/><circle cx="689" cy="93" r="1.8" fill="#7FEBF7" style="animation-duration:7s;animation-delay:-4s" class="s"/><circle cx="846" cy="182" r="2.6" fill="#7FEBF7" style="animation-duration:3s;animation-delay:-5s" class="s"/><circle cx="1003" cy="271" r="1" fill="#7FEBF7" style="animation-duration:4s;animation-delay:-6s" class="s"/><circle cx="1160" cy="60" r="1.8" fill="#7FEBF7" style="animation-duration:5s;animation-delay:-0s" class="s"/><circle cx="117" cy="149" r="2.6" fill="#7FEBF7" style="animation-duration:6s;animation-delay:-1s" class="s"/><circle cx="274" cy="238" r="1" fill="#7FEBF7" style="animation-duration:7s;animation-delay:-2s" class="s"/><circle cx="431" cy="27" r="1.8" fill="#7FEBF7" style="animation-duration:3s;animation-delay:-3s" class="s"/><circle cx="588" cy="116" r="2.6" fill="#7FEBF7" style="animation-duration:4s;animation-delay:-4s" class="s"/><circle cx="745" cy="205" r="1" fill="#7FEBF7" style="animation-duration:5s;animation-delay:-5s" class="s"/><circle cx="902" cy="294" r="1.8" fill="#7FEBF7" style="animation-duration:6s;animation-delay:-6s" class="s"/><circle cx="1059" cy="83" r="2.6" fill="#7FEBF7" style="animation-duration:7s;animation-delay:-0s" class="s"/><circle cx="16" cy="172" r="1" fill="#7FEBF7" style="animation-duration:3s;animation-delay:-1s" class="s"/><circle cx="173" cy="261" r="1.8" fill="#7FEBF7" style="animation-duration:4s;animation-delay:-2s" class="s"/><circle cx="330" cy="50" r="2.6" fill="#7FEBF7" style="animation-duration:5s;animation-delay:-3s" class="s"/><circle cx="487" cy="139" r="1" fill="#7FEBF7" style="animation-duration:6s;animation-delay:-4s" class="s"/><circle cx="644" cy="228" r="1.8" fill="#7FEBF7" style="animation-duration:7s;animation-delay:-5s" class="s"/><circle cx="801" cy="17" r="2.6" fill="#7FEBF7" style="animation-duration:3s;animation-delay:-6s" class="s"/><circle cx="958" cy="106" r="1" fill="#7FEBF7" style="animation-duration:4s;animation-delay:-0s" class="s"/>
+    <text x="600" y="150" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="58" font-weight="700" letter-spacing="10" fill="#E6FDFF" filter="url(#tg)">MEHMET ANIL ÜLKÜ</text>
+    <text x="600" y="200" text-anchor="middle" font-family="Consolas,'Fira Code',Menlo,monospace" font-size="20" letter-spacing="5" fill="#7FC9D8">GAME DEV · 3D &amp; ANIMATION · REAL-TIME SYSTEMS</text>
+  </g>
+</svg>
