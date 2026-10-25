@@ -2,8 +2,18 @@ name: Generate Snake Animation
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # Her gün gece 00:00'da çalışacak
-  workflow_dispatch:       # Manuel çalıştırma için
+    - cron: "0 0 * * *"   # Her gün 00:00 UTC
+  workflow_dispatch:       # Manuel çalıştırma
+  push:
+    branches: [main]
+    paths: [.github/workflows/snake.yml]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: snake
+  cancel-in-progress: true
 
 jobs:
   generate:
@@ -11,26 +21,22 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      # Repo'yu checkout et
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      # Snake SVG üret
+      # Açık ve koyu tema için "dark energy" paletinde snake SVG'leri üret
       - name: Generate snake
-        uses: Platane/snk@v3
+        uses: Platane/snk/svg-only@v3
         with:
-          github_user_name: Adonis-Lee
+          github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-contribution-grid-snake.svg?palette=%231f6feb
-            dist/github-contribution-grid-snake-dark.svg?palette=%231f6feb
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            dist/github-contribution-grid-snake.svg?color_snake=#0B6E82&color_dots=#DCEBF0,#A9DDE8,#5CC3D7,#1D97B0,#0B6E82&color_dot_border=#0000000f
+            dist/github-contribution-grid-snake-dark.svg?color_snake=#5CE1F0&color_dots=#15222B,#0E3A4A,#16627A,#2BA3BD,#5CE1F0&color_dot_border=#ffffff0d
 
-      # Üretilen SVG'leri output branch'e push et
+      # Üretilen SVG'leri output branch'ine yükle (eski Node 20 action'ları yerine düz git)
       - name: Push to output branch
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        working-directory: dist
+        run: |
+          git init -q -b output
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -q -m "Update snake animation"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" output

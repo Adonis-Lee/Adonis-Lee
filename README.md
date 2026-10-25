@@ -1,115 +1,74 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://komarev.com/ghpvc/?username=Adonis-Lee&color=00e5ff&style=flat-square" />
-    <source media="(prefers-color-scheme: light)" srcset="https://komarev.com/ghpvc/?username=Adonis-Lee&color=095f92&style=flat-square" />
-    <img src="https://komarev.com/ghpvc/?username=Adonis-Lee&color=095f92&style=flat-square" alt="Visitor Count" />
-  </picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg" /><img width="100%" src="assets/banner-light.svg" alt="Mehmet Anıl ÜLKÜ — Game Developer · 3D & Animation · Real-Time Systems" /></picture>
 </p>
 
-<div align="center">
-  <!-- Theme-aware typing SVG (Ice-blue for dark mode, Blue #095f92 for light mode) -->
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&pause=1000&color=00e5ff&center=true&vCenter=true&width=750&lines=Mehmet+An%C4%B1l+%C3%9CLK%C3%9C;Game+Developer+%F0%9F%8E%AE;EEE+%26+CENG+Student+%E2%9A%A1;Code+%E2%80%A2+Design+%E2%80%A2+Create+%F0%9F%9A%80" />
-    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&pause=1000&color=095f92&center=true&vCenter=true&width=750&lines=Mehmet+An%C4%B1l+%C3%9CLK%C3%9C;Game+Developer+%F0%9F%8E%AE;EEE+%26+CENG+Student+%E2%9A%A1;Code+%E2%80%A2+Design+%E2%80%A2+Create+%F0%9F%9A%80" />
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&pause=1000&color=095f92&center=true&vCenter=true&width=750&lines=Mehmet+An%C4%B1l+%C3%9CLK%C3%9C;Game+Developer+%F0%9F%8E%AE;EEE+%26+CENG+Student+%E2%9A%A1;Code+%E2%80%A2+Design+%E2%80%A2+Create+%F0%9F%9A%80" alt="Mehmet Anıl ÜLKÜ Typing" />
-  </picture>
-</div>
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=3500&pause=1200&center=true&vCenter=true&width=640&height=40&color=5CE1F0&lines=Turning%20ideas%20into%20interactive%20experiences;Learning%20Blender%20%E2%86%92%20anime-style%203D%20animation;Unity%20%C2%B7%20Unreal%20Engine%20%C2%B7%20Real-time%20systems;EEE%20%26%20CENG%20student" /><source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=3500&pause=1200&center=true&vCenter=true&width=640&height=40&color=0B6E82&lines=Turning%20ideas%20into%20interactive%20experiences;Learning%20Blender%20%E2%86%92%20anime-style%203D%20animation;Unity%20%C2%B7%20Unreal%20Engine%20%C2%B7%20Real-time%20systems;EEE%20%26%20CENG%20student" /><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=3500&pause=1200&center=true&vCenter=true&width=640&height=40&color=0B6E82&lines=Turning%20ideas%20into%20interactive%20experiences;Learning%20Blender%20%E2%86%92%20anime-style%203D%20animation;Unity%20%C2%B7%20Unreal%20Engine%20%C2%B7%20Real-time%20systems;EEE%20%26%20CENG%20student" alt="Turning ideas into interactive experiences" /></picture>
+</p>
 
----
+<p align="center">
+  <a href="https://www.linkedin.com/in/mehmetanilulku/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/LinkedIn-0A1A22?style=for-the-badge&logo=linkedin&logoColor=5CE1F0" /><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/LinkedIn-E3F2F6?style=for-the-badge&logo=linkedin&logoColor=0B6E82" /><img src="https://img.shields.io/badge/LinkedIn-E3F2F6?style=for-the-badge&logo=linkedin&logoColor=0B6E82" alt="LinkedIn" /></picture></a>
+  <a href="mailto:mehmetulku2003@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Email-0A1A22?style=for-the-badge&logo=gmail&logoColor=5CE1F0" /><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Email-E3F2F6?style=for-the-badge&logo=gmail&logoColor=0B6E82" /><img src="https://img.shields.io/badge/Email-E3F2F6?style=for-the-badge&logo=gmail&logoColor=0B6E82" alt="Email" /></picture></a>
+  <a href="https://github.com/Adonis-Lee"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/GitHub-0A1A22?style=for-the-badge&logo=github&logoColor=5CE1F0" /><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/GitHub-E3F2F6?style=for-the-badge&logo=github&logoColor=0B6E82" /><img src="https://img.shields.io/badge/GitHub-E3F2F6?style=for-the-badge&logo=github&logoColor=0B6E82" alt="GitHub" /></picture></a>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://komarev.com/ghpvc/?username=Adonis-Lee&label=views&color=5CE1F0&style=for-the-badge" /><source media="(prefers-color-scheme: light)" srcset="https://komarev.com/ghpvc/?username=Adonis-Lee&label=views&color=0B6E82&style=for-the-badge" /><img src="https://komarev.com/ghpvc/?username=Adonis-Lee&label=views&color=0B6E82&style=for-the-badge" alt="Profile views" /></picture>
+</p>
 
-# 🔮 Mehmet Anıl ÜLKÜ
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/divider-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/divider-light.svg" /><img width="100%" src="assets/divider-light.svg" alt="" /></picture></p>
 
-> *"Turning ideas into interactive experiences."*
+## ⚡ About
 
----
+- 🎮 Game developer — gameplay systems, graphics and real-time simulation in **Unity** & **Unreal Engine**.
+- 🌀 On a **3D & anime-style animation** journey in **Blender**: modeling, shading, lighting, rendering.
+- 🔌 **EEE & CENG** background, so I care about performance and how things work under the hood.
+- 🧭 Next up: **Unreal** cinematics, then **Houdini** FX.
 
-## 🚀 About Me
+## 🌀 3D Journey
 
-- 🎮 Specializing in **Game Development, Graphics Rendering & Real-Time Systems**.
-- ⚙️ Building immersive gameplay systems and physics mechanics using **Unity** & **Unreal Engine**.
-- ⚡ Channeling electrical engineering and computer science foundations directly into performance-optimized systems.
-- 🧠 Currently improving in:
-  - **Unity** (C#)
-  - **Unreal Engine** (C++)
-  - **Blender** (3D Modeling)
-  - **Machine Learning** (AI)
+<p align="center">
+  <a href="https://github.com/Adonis-Lee/blender-volleyball-ball"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=blender-volleyball-ball&show_owner=false&description_lines_count=2&bg_color=070D13&title_color=5CE1F0&text_color=CFE7EE&icon_color=2BB3CC&border_color=12303D&border_radius=10" /><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=blender-volleyball-ball&show_owner=false&description_lines_count=2&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" /><img width="48%" src="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=blender-volleyball-ball&show_owner=false&description_lines_count=2&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" alt="blender-volleyball-ball" /></picture></a>
+  <a href="https://github.com/Adonis-Lee/blender-isometric-room"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=blender-isometric-room&show_owner=false&description_lines_count=2&bg_color=070D13&title_color=5CE1F0&text_color=CFE7EE&icon_color=2BB3CC&border_color=12303D&border_radius=10" /><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=blender-isometric-room&show_owner=false&description_lines_count=2&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" /><img width="48%" src="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=blender-isometric-room&show_owner=false&description_lines_count=2&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" alt="blender-isometric-room" /></picture></a>
+</p>
 
----
+<p align="center"><code>Blender ▰▰▰▱▱</code> → <code>Unreal ▱▱▱▱▱</code> → <code>Houdini ▱▱▱▱▱</code></p>
+
+## 🧪 Featured Projects
+
+<p align="center">
+  <a href="https://github.com/Adonis-Lee/NexusFlow"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=NexusFlow&show_owner=false&description_lines_count=2&bg_color=070D13&title_color=5CE1F0&text_color=CFE7EE&icon_color=2BB3CC&border_color=12303D&border_radius=10" /><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=NexusFlow&show_owner=false&description_lines_count=2&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" /><img width="48%" src="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=NexusFlow&show_owner=false&description_lines_count=2&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" alt="NexusFlow" /></picture></a>
+  <a href="https://github.com/Adonis-Lee/mac-wifi-sensing"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=mac-wifi-sensing&show_owner=false&description_lines_count=2&bg_color=070D13&title_color=5CE1F0&text_color=CFE7EE&icon_color=2BB3CC&border_color=12303D&border_radius=10" /><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=mac-wifi-sensing&show_owner=false&description_lines_count=2&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" /><img width="48%" src="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=mac-wifi-sensing&show_owner=false&description_lines_count=2&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" alt="mac-wifi-sensing" /></picture></a>
+  <a href="https://github.com/Adonis-Lee/Echo___Game"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=Echo___Game&show_owner=false&description_lines_count=2&bg_color=070D13&title_color=5CE1F0&text_color=CFE7EE&icon_color=2BB3CC&border_color=12303D&border_radius=10" /><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=Echo___Game&show_owner=false&description_lines_count=2&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" /><img width="48%" src="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=Echo___Game&show_owner=false&description_lines_count=2&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" alt="Echo___Game" /></picture></a>
+  <a href="https://github.com/Adonis-Lee/Machine_Learning_Project"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=Machine_Learning_Project&show_owner=false&description_lines_count=2&bg_color=070D13&title_color=5CE1F0&text_color=CFE7EE&icon_color=2BB3CC&border_color=12303D&border_radius=10" /><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=Machine_Learning_Project&show_owner=false&description_lines_count=2&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" /><img width="48%" src="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=Machine_Learning_Project&show_owner=false&description_lines_count=2&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" alt="Machine_Learning_Project" /></picture></a>
+</p>
 
 ## 🛠️ Tech Stack
 
-### 🎮 Game Development
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Unity-101010?style=for-the-badge&logo=unity&logoColor=00E5FF" />
-  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Unity-F1F5F9?style=for-the-badge&logo=unity&logoColor=095f92" />
-  <img src="https://img.shields.io/badge/Unity-F1F5F9?style=for-the-badge&logo=unity&logoColor=095f92" alt="Unity" />
-</picture> <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Unreal%20Engine-101010?style=for-the-badge&logo=unrealengine&logoColor=095f92" />
-  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Unreal%20Engine-F1F5F9?style=for-the-badge&logo=unrealengine&logoColor=095f92" />
-  <img src="https://img.shields.io/badge/Unreal%20Engine-F1F5F9?style=for-the-badge&logo=unrealengine&logoColor=095f92" alt="Unreal Engine" />
-</picture> <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Blender-101010?style=for-the-badge&logo=blender&logoColor=00E5FF" />
-  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Blender-F1F5F9?style=for-the-badge&logo=blender&logoColor=095f92" />
-  <img src="https://img.shields.io/badge/Blender-F1F5F9?style=for-the-badge&logo=blender&logoColor=095f92" alt="Blender" />
-</picture>
-
-### ⚙️ Engineering & Simulation
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/SolidWorks-101010?style=for-the-badge&logo=dassaultsystemes&logoColor=095f92" />
-  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/SolidWorks-F1F5F9?style=for-the-badge&logo=dassaultsystemes&logoColor=095f92" />
-  <img src="https://img.shields.io/badge/SolidWorks-F1F5F9?style=for-the-badge&logo=dassaultsystemes&logoColor=095f92" alt="SolidWorks" />
-</picture> <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/MATLAB-101010?style=for-the-badge&logo=matlab&logoColor=00E5FF" />
-  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/MATLAB-F1F5F9?style=for-the-badge&logo=matlab&logoColor=095f92" />
-  <img src="https://img.shields.io/badge/MATLAB-F1F5F9?style=for-the-badge&logo=matlab&logoColor=095f92" alt="MATLAB" />
-</picture>
-
-### 💻 Programming
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/C%23-101010?style=for-the-badge&logo=csharp&logoColor=00E5FF" />
-  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/C%23-F1F5F9?style=for-the-badge&logo=csharp&logoColor=095f92" />
-  <img src="https://img.shields.io/badge/C%23-F1F5F9?style=for-the-badge&logo=csharp&logoColor=095f92" alt="C#" />
-</picture> <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/C%2B%2B-101010?style=for-the-badge&logo=cplusplus&logoColor=095f92" />
-  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/C%2B%2B-F1F5F9?style=for-the-badge&logo=cplusplus&logoColor=095f92" />
-  <img src="https://img.shields.io/badge/C%2B%2B-F1F5F9?style=for-the-badge&logo=cplusplus&logoColor=095f92" alt="C++" />
-</picture> <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Python-101010?style=for-the-badge&logo=python&logoColor=00E5FF" />
-  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Python-F1F5F9?style=for-the-badge&logo=python&logoColor=095f92" />
-  <img src="https://img.shields.io/badge/Python-F1F5F9?style=for-the-badge&logo=python&logoColor=095f92" alt="Python" />
-</picture> <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/C-101010?style=for-the-badge&logo=c&logoColor=095f92" />
-  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/C-F1F5F9?style=for-the-badge&logo=c&logoColor=095f92" />
-  <img src="https://img.shields.io/badge/C-F1F5F9?style=for-the-badge&logo=c&logoColor=095f92" alt="C" />
-</picture>
-
----
-
-## 📊 Developer Stats
-
-<div align="center">
-  <!-- Theme-aware stats card (Ice-blue/Blue for dark mode, Blue #095f92 for light mode) -->
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-beige.vercel.app/api?username=Adonis-Lee&show_icons=true&bg_color=0D0E15&title_color=00e5ff&text_color=E2E8F0&icon_color=095f92&border_color=222533&hide_border=false" />
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-beige.vercel.app/api?username=Adonis-Lee&show_icons=true&bg_color=F8FAFC&title_color=095f92&text_color=1E293B&icon_color=095f92&border_color=E2E8F0&hide_border=false" />
-    <img height="170" src="https://github-readme-stats-eight-beige.vercel.app/api?username=Adonis-Lee&show_icons=true&bg_color=F8FAFC&title_color=095f92&text_color=1E293B&icon_color=095f92&border_color=E2E8F0&hide_border=false" alt="Adonis-Lee's GitHub Stats" />
-  </picture>
-  
-  <!-- Theme-aware streak stats card (Ice-blue/Blue for dark mode, Blue #095f92 for light mode) -->
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=Adonis-Lee&theme=dark&background=0D0E15&title=00e5ff&ring=095f92&fire=00e5ff&currStreakNum=E2E8F0&sideNums=E2E8F0&sideLabels=E2E8F0&currStreakLabel=00e5ff&border=222533" />
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=Adonis-Lee&background=F8FAFC&title=095f92&ring=095f92&fire=095f92&currStreakNum=1E293B&sideNums=1E293B&sideLabels=475569&currStreakLabel=095f92&border=E2E8F0" />
-    <img height="170" src="https://github-readme-streak-stats.herokuapp.com/?user=Adonis-Lee&background=F8FAFC&title=095f92&ring=095f92&fire=095f92&currStreakNum=1E293B&sideNums=1E293B&sideLabels=475569&currStreakLabel=095f92&border=E2E8F0" alt="Adonis-Lee's Streak Stats" />
-  </picture>
-</div>
-
----
-
-<!-- Theme-aware Contribution Snake -->
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Adonis-Lee/Adonis-Lee/output/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Adonis-Lee/Adonis-Lee/output/github-contribution-grid-snake.svg" />
-    <img src="https://raw.githubusercontent.com/Adonis-Lee/Adonis-Lee/output/github-contribution-grid-snake.svg" alt="Snake Game Grid" />
-  </picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Unity-0A1A22?style=for-the-badge&logo=unity&logoColor=5CE1F0" /><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Unity-E3F2F6?style=for-the-badge&logo=unity&logoColor=0B6E82" /><img src="https://img.shields.io/badge/Unity-E3F2F6?style=for-the-badge&logo=unity&logoColor=0B6E82" alt="Unity" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Unreal%20Engine-0A1A22?style=for-the-badge&logo=unrealengine&logoColor=5CE1F0" /><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Unreal%20Engine-E3F2F6?style=for-the-badge&logo=unrealengine&logoColor=0B6E82" /><img src="https://img.shields.io/badge/Unreal%20Engine-E3F2F6?style=for-the-badge&logo=unrealengine&logoColor=0B6E82" alt="Unreal Engine" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Blender-0A1A22?style=for-the-badge&logo=blender&logoColor=5CE1F0" /><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Blender-E3F2F6?style=for-the-badge&logo=blender&logoColor=0B6E82" /><img src="https://img.shields.io/badge/Blender-E3F2F6?style=for-the-badge&logo=blender&logoColor=0B6E82" alt="Blender" /></picture>
+  <br />
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/C%23-0A1A22?style=for-the-badge&logo=csharp&logoColor=5CE1F0" /><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/C%23-E3F2F6?style=for-the-badge&logo=csharp&logoColor=0B6E82" /><img src="https://img.shields.io/badge/C%23-E3F2F6?style=for-the-badge&logo=csharp&logoColor=0B6E82" alt="C#" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/C%2B%2B-0A1A22?style=for-the-badge&logo=cplusplus&logoColor=5CE1F0" /><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/C%2B%2B-E3F2F6?style=for-the-badge&logo=cplusplus&logoColor=0B6E82" /><img src="https://img.shields.io/badge/C%2B%2B-E3F2F6?style=for-the-badge&logo=cplusplus&logoColor=0B6E82" alt="C++" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/C-0A1A22?style=for-the-badge&logo=c&logoColor=5CE1F0" /><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/C-E3F2F6?style=for-the-badge&logo=c&logoColor=0B6E82" /><img src="https://img.shields.io/badge/C-E3F2F6?style=for-the-badge&logo=c&logoColor=0B6E82" alt="C" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Python-0A1A22?style=for-the-badge&logo=python&logoColor=5CE1F0" /><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Python-E3F2F6?style=for-the-badge&logo=python&logoColor=0B6E82" /><img src="https://img.shields.io/badge/Python-E3F2F6?style=for-the-badge&logo=python&logoColor=0B6E82" alt="Python" /></picture>
+  <br />
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/MATLAB-0A1A22?style=for-the-badge&logo=mathworks&logoColor=5CE1F0" /><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/MATLAB-E3F2F6?style=for-the-badge&logo=mathworks&logoColor=0B6E82" /><img src="https://img.shields.io/badge/MATLAB-E3F2F6?style=for-the-badge&logo=mathworks&logoColor=0B6E82" alt="MATLAB" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/SolidWorks-0A1A22?style=for-the-badge&logo=dassaultsystemes&logoColor=5CE1F0" /><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/SolidWorks-E3F2F6?style=for-the-badge&logo=dassaultsystemes&logoColor=0B6E82" /><img src="https://img.shields.io/badge/SolidWorks-E3F2F6?style=for-the-badge&logo=dassaultsystemes&logoColor=0B6E82" alt="SolidWorks" /></picture>
 </p>
+
+## 📊 Stats
+
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-beige.vercel.app/api?username=Adonis-Lee&show_icons=true&rank_icon=github&bg_color=070D13&title_color=5CE1F0&text_color=CFE7EE&icon_color=2BB3CC&border_color=12303D&border_radius=10" /><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-beige.vercel.app/api?username=Adonis-Lee&show_icons=true&rank_icon=github&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" /><img height="165" src="https://github-readme-stats-eight-beige.vercel.app/api?username=Adonis-Lee&show_icons=true&rank_icon=github&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" alt="GitHub stats" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-beige.vercel.app/api/top-langs/?username=Adonis-Lee&layout=compact&langs_count=6&card_width=320&bg_color=070D13&title_color=5CE1F0&text_color=CFE7EE&icon_color=2BB3CC&border_color=12303D&border_radius=10" /><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-beige.vercel.app/api/top-langs/?username=Adonis-Lee&layout=compact&langs_count=6&card_width=320&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" /><img height="165" src="https://github-readme-stats-eight-beige.vercel.app/api/top-langs/?username=Adonis-Lee&layout=compact&langs_count=6&card_width=320&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" alt="Most used languages" /></picture>
+</p>
+
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=Adonis-Lee&background=070D13&border=12303D&stroke=12303D&ring=5CE1F0&fire=5CE1F0&currStreakLabel=5CE1F0&currStreakNum=CFE7EE&sideNums=CFE7EE&sideLabels=CFE7EE&dates=2BB3CC&border_radius=10" /><source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com/?user=Adonis-Lee&background=F2F8FA&border=CFE3EA&stroke=CFE3EA&ring=0B6E82&fire=0B6E82&currStreakLabel=0B6E82&currStreakNum=10252E&sideNums=10252E&sideLabels=10252E&dates=0E7C93&border_radius=10" /><img height="165" src="https://streak-stats.demolab.com/?user=Adonis-Lee&background=F2F8FA&border=CFE3EA&stroke=CFE3EA&ring=0B6E82&fire=0B6E82&currStreakLabel=0B6E82&currStreakNum=10252E&sideNums=10252E&sideLabels=10252E&dates=0E7C93&border_radius=10" alt="GitHub streak" /></picture>
+</p>
+
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Adonis-Lee/Adonis-Lee/output/github-contribution-grid-snake-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Adonis-Lee/Adonis-Lee/output/github-contribution-grid-snake.svg" /><img width="100%" src="https://raw.githubusercontent.com/Adonis-Lee/Adonis-Lee/output/github-contribution-grid-snake.svg" alt="Contribution snake" /></picture>
+</p>
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/divider-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/divider-light.svg" /><img width="100%" src="assets/divider-light.svg" alt="" /></picture></p>
