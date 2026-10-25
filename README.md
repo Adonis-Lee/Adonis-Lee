@@ -22,15 +22,6 @@
 - 🔌 **EEE & CENG** background, so I care about performance and how things work under the hood.
 - 🧭 Next up: **Unreal** cinematics, then **Houdini** FX.
 
-## 🌀 3D Journey
-
-<p align="center">
-  <a href="https://github.com/Adonis-Lee/blender-volleyball-ball"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=blender-volleyball-ball&show_owner=false&description_lines_count=2&bg_color=070D13&title_color=5CE1F0&text_color=CFE7EE&icon_color=2BB3CC&border_color=12303D&border_radius=10" /><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=blender-volleyball-ball&show_owner=false&description_lines_count=2&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" /><img width="48%" src="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=blender-volleyball-ball&show_owner=false&description_lines_count=2&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" alt="blender-volleyball-ball" /></picture></a>
-  <a href="https://github.com/Adonis-Lee/blender-isometric-room"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=blender-isometric-room&show_owner=false&description_lines_count=2&bg_color=070D13&title_color=5CE1F0&text_color=CFE7EE&icon_color=2BB3CC&border_color=12303D&border_radius=10" /><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=blender-isometric-room&show_owner=false&description_lines_count=2&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" /><img width="48%" src="https://github-readme-stats-eight-beige.vercel.app/api/pin/?username=Adonis-Lee&repo=blender-isometric-room&show_owner=false&description_lines_count=2&bg_color=F2F8FA&title_color=0B6E82&text_color=10252E&icon_color=0E7C93&border_color=CFE3EA&border_radius=10" alt="blender-isometric-room" /></picture></a>
-</p>
-
-<p align="center"><code>Blender ▰▰▰▱▱</code> → <code>Unreal ▱▱▱▱▱</code> → <code>Houdini ▱▱▱▱▱</code></p>
-
 ## 🧪 Featured Projects
 
 <p align="center">

@@ -54,15 +54,6 @@ ${divider}
 - 🔌 **EEE & CENG** background, so I care about performance and how things work under the hood.
 - 🧭 Next up: **Unreal** cinematics, then **Houdini** FX.
 
-## 🌀 3D Journey
-
-<p align="center">
-  ${pin("blender-volleyball-ball")}
-  ${pin("blender-isometric-room")}
-</p>
-
-<p align="center"><code>Blender ▰▰▰▱▱</code> → <code>Unreal ▱▱▱▱▱</code> → <code>Houdini ▱▱▱▱▱</code></p>
-
 ## 🧪 Featured Projects
 
 <p align="center">
