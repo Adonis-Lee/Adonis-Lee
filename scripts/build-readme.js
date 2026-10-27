@@ -49,10 +49,10 @@ ${divider}
 ## 🧪 Featured Projects
 
 <p align="center">
-  ${pin("NexusFlow")}
-  ${pin("mac-wifi-sensing")}
-  ${pin("Echo___Game")}
   ${pin("Machine_Learning_Project")}
+  ${pin("mac-wifi-sensing")}
+  ${pin("blender-isometric-room")}
+  ${pin("blender-volleyball-ball")}
 </p>
 
 ## 🛠️ Tech Stack

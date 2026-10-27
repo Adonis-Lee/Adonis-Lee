@@ -173,19 +173,19 @@ function banner(k) {
 </svg>
 `;
 }
-// Typing line slice: each line types in, holds, erases; one line at a time on an 18s loop
-const LINES = ["Turning ideas into interactive experiences", "Learning Blender → anime-style 3D animation", "Unity · Unreal Engine · Real-time systems", "EEE & CENG student"];
+// Typing line slice: each line types in, holds, erases; one line at a time, 4.5s per line
+const LINES = ["Turning ideas into interactive experiences", "Unity · Unreal Engine · Real-time systems", "EEE & CENG student"];
 const TYPE = { dark: { ink: "#6FF5F7" }, light: { ink: "#0B6E82" } };
 function typing(k) {
-  const c = { ...T[k], ...TYPE[k] }, cw = 15.6, slot = 1 / LINES.length, pct = (v) => (v * 100).toFixed(3) + "%";
+  const c = { ...T[k], ...TYPE[k] }, cw = 15.6, slot = 1 / LINES.length, period = LINES.length * 4.5, pct = (v) => (v * 100).toFixed(3) + "%";
   let css = "", body = "";
   LINES.forEach((line, i) => {
-    const n = [...line].length, L = n * cw, x0 = (W - L) / 2, s0 = i * slot, s1 = s0 + 0.1, s2 = s0 + 0.19, s3 = s0 + 0.225;
+    const n = [...line].length, L = n * cw, x0 = (W - L) / 2, s0 = i * slot, s1 = s0 + 0.4 * slot, s2 = s0 + 0.76 * slot, s3 = s0 + 0.9 * slot;
     css += `@keyframes tw${i}{0%,${pct(s0)}{transform:scaleX(0);animation-timing-function:steps(${n},end)}${pct(s1)},${pct(s2)}{transform:scaleX(1);animation-timing-function:steps(${n},end)}${pct(s3)},100%{transform:scaleX(0)}}
 `;
     css += `@keyframes cu${i}{0%,${pct(Math.max(0, s0 - 0.0001))}{opacity:0;transform:translateX(0)}${pct(s0)}{opacity:1;transform:translateX(0);animation-timing-function:steps(${n},end)}${pct(s1)},${pct(s2)}{opacity:1;transform:translateX(${L}px);animation-timing-function:steps(${n},end)}${pct(s3)}{opacity:1;transform:translateX(0)}${pct(s3 + 0.0001)},100%{opacity:0}}
 `;
-    css += `.r${i}{transform-origin:${x0}px 0;transform:scaleX(0);animation:tw${i} 18s linear infinite}.k${i}{opacity:0;animation:cu${i} 18s linear infinite}
+    css += `.r${i}{transform-origin:${x0}px 0;transform:scaleX(0);animation:tw${i} ${period}s linear infinite}.k${i}{opacity:0;animation:cu${i} ${period}s linear infinite}
 `;
     body += `<clipPath id="t${i}"><rect class="r${i}" x="${x0}" y="0" width="${L}" height="${TYPE_H}"/></clipPath>
     <text clip-path="url(#t${i})" x="${x0}" y="38" textLength="${L}" lengthAdjust="spacingAndGlyphs" font-family="Consolas,'Fira Code',Menlo,monospace" font-size="26" fill="${c.ink}">${line.replace("&", "&amp;")}</text>
